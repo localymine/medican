@@ -1,0 +1,86 @@
+/*
+Theme Name: Medican
+Theme URI: http://www.azexo.com/medican
+Version: 1.19
+Author: Azexo
+Author URI: http://www.azexo.com
+Text Domain: medican
+Description: Multipurpose listing/directory theme
+License: GNU General Public License version 3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+
+/*------------------------------------------------------------------
+
+CONTENTS
+All less files compiled automatically via WP Less library
+
+1. less/medican/variables.less - less variables
+2. less/medican/general.less - main layout
+3. less/medican/typography.less - typography and base HTML/WP tags
+4. less/medican/comments.less - WP comments
+5. less/medican/post.less - WP post
+6. less/medican/header.less - WP header
+7. less/medican/menu.less - WP site menu
+8. less/medican/pagination.less - WP pagination
+9. less/medican/sidebar.less - WP sidebars
+10. less/medican/widgets.less - WP widgets
+11. less/medican/archive.less - WP archive page title
+12. less/medican/templates.less - various post templates
+13. less/medican/helpers.less - reusable classes
+14. less/medican/visual-composer.less - visual composer shortcodes
+15. less/medican/like.less - post like feature
+16. less/medican/content.less - styles to use it inside post content
+17. less/medican/woo-cart.less - WooCommerce cart page
+18. less/medican/woo-checkout.less - WooCommerce checkout page
+19. less/medican/woocommerce.less - WooCommerce general styles
+20. less/medican/woo-product.less - WooCommerce single product page
+21. less/medican/woo-reviews.less - WooCommerce reviews
+22. less/medican/woo-templates.less - WooCommerce product templates
+23. less/medican/woo-widgets.less - WooCommerce widgets
+
+-------------------------------------------------------------------*/
+
+.wp-caption { 
+}
+.wp-caption .wp-caption-text { 
+}
+.wp-caption img { 
+}
+.gallery-caption { 
+}
+.bypostauthor {
+}
+.alignleft {
+}
+.alignright {
+}
+.aligncenter {
+}
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}

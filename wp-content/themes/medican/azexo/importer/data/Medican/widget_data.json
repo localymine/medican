@@ -1,0 +1,325 @@
+[{
+    "shop": ["vc_widget-16", "vc_widget-15", "vc_widget-14", "vc_widget-13", "vc_widget-12", "vc_widget-11", "vc_widget-10", "vc_widget-5", "vc_widget-18", "vc_widget-9", "woocommerce_product_categories-2"],
+    "sidebar": ["vc_widget-17", "vc_widget-6", "nav_menu-2", "search-3", "vc_widget-4", "categories-3", "archives-3", "tag_cloud-2"],
+    "footer_sidebar": ["vc_widget-2"],
+    "middle_sidebar": ["vc_widget-7", "vc_widget-8"]
+}, {
+    "vc_widget": {
+        "16": {
+            "title": "",
+            "post": "744",
+            "classes": "",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "taxonomy",
+                    "minor": "tour-type",
+                    "has_children": false
+                }]
+            }
+        },
+        "15": {
+            "title": "",
+            "post": "730",
+            "classes": "",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "taxonomy",
+                    "minor": "property-type",
+                    "has_children": false
+                }]
+            }
+        },
+        "14": {
+            "title": "",
+            "post": "716",
+            "classes": "",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "taxonomy",
+                    "minor": "job-category",
+                    "has_children": false
+                }]
+            }
+        },
+        "13": {
+            "title": "",
+            "post": "679",
+            "classes": "",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "taxonomy",
+                    "minor": "room-category",
+                    "has_children": false
+                }]
+            }
+        },
+        "12": {
+            "title": "",
+            "post": "665",
+            "classes": "",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "taxonomy",
+                    "minor": "event-category",
+                    "has_children": false
+                }]
+            }
+        },
+        "11": {
+            "title": "",
+            "post": "645",
+            "classes": "",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "taxonomy",
+                    "minor": "course-category",
+                    "has_children": false
+                }]
+            }
+        },
+        "10": {
+            "title": "",
+            "post": "633",
+            "classes": "",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "taxonomy",
+                    "minor": "car-fuel-type",
+                    "has_children": false
+                }]
+            }
+        },
+        "5": {
+            "title": "",
+            "post": "54",
+            "classes": "",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "taxonomy",
+                    "minor": "product_cat",
+                    "has_children": false
+                }]
+            }
+        },
+        "18": {
+            "title": "",
+            "post": "762",
+            "classes": "",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "role",
+                    "minor": "vendor",
+                    "has_children": false
+                }]
+            }
+        },
+        "9": {
+            "title": "Search for Health Care",
+            "post": "395",
+            "classes": "",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "page",
+                    "minor": "archive",
+                    "has_children": false
+                }]
+            }
+        },
+        "17": {
+            "title": "",
+            "post": "762",
+            "classes": "",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "role",
+                    "minor": "vendor",
+                    "has_children": false
+                }]
+            }
+        },
+        "6": {
+            "title": "",
+            "post": "56",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "page",
+                    "minor": "post_type-page"
+                }]
+            }
+        },
+        "4": {
+            "title": "Recent Comments",
+            "post": "52",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "page",
+                    "minor": "archive"
+                }, {
+                    "major": "page",
+                    "minor": "posts"
+                }, {
+                    "major": "page",
+                    "minor": "post_type-post"
+                }]
+            }
+        },
+        "2": {
+            "title": "",
+            "post": "39"
+        },
+        "7": {
+            "title": "",
+            "post": "175",
+            "classes": "",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "page",
+                    "minor": "post_type-product",
+                    "has_children": false
+                }]
+            }
+        },
+        "8": {
+            "title": "",
+            "post": "290",
+            "classes": "",
+            "conditions": {
+                "action": "hide",
+                "rules": [{
+                    "major": "page",
+                    "minor": "front",
+                    "has_children": false
+                }, {
+                    "major": "page",
+                    "minor": "post_type-product",
+                    "has_children": false
+                }]
+            }
+        },
+        "_multiwidget": 1
+    },
+    "woocommerce_product_categories": {
+        "2": {
+            "title": "Categories",
+            "orderby": "name",
+            "dropdown": 0,
+            "count": "1",
+            "hierarchical": "1",
+            "show_children_only": 0,
+            "conditions": {
+                "action": "hide",
+                "rules": [{
+                    "major": "page",
+                    "minor": "post_type-product"
+                }]
+            }
+        },
+        "_multiwidget": 1
+    },
+    "nav_menu": {
+        "2": {
+            "nav_menu": 34,
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "page",
+                    "minor": "post_type-page"
+                }]
+            }
+        },
+        "_multiwidget": 1
+    },
+    "search": {
+        "3": {
+            "title": "",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "page",
+                    "minor": "archive"
+                }, {
+                    "major": "page",
+                    "minor": "posts"
+                }]
+            }
+        },
+        "_multiwidget": 1
+    },
+    "categories": {
+        "3": {
+            "title": "",
+            "count": 1,
+            "hierarchical": 0,
+            "dropdown": 0,
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "page",
+                    "minor": "archive"
+                }, {
+                    "major": "page",
+                    "minor": "posts"
+                }, {
+                    "major": "page",
+                    "minor": "post_type-post"
+                }]
+            }
+        },
+        "_multiwidget": 1
+    },
+    "archives": {
+        "3": {
+            "title": "",
+            "count": 1,
+            "dropdown": 0,
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "page",
+                    "minor": "archive"
+                }, {
+                    "major": "page",
+                    "minor": "posts"
+                }, {
+                    "major": "page",
+                    "minor": "post_type-post"
+                }]
+            }
+        },
+        "_multiwidget": 1
+    },
+    "tag_cloud": {
+        "2": {
+            "title": "",
+            "taxonomy": "post_tag",
+            "conditions": {
+                "action": "show",
+                "rules": [{
+                    "major": "page",
+                    "minor": "archive"
+                }, {
+                    "major": "page",
+                    "minor": "posts"
+                }, {
+                    "major": "page",
+                    "minor": "post_type-post"
+                }]
+            }
+        },
+        "_multiwidget": 1
+    }
+}]

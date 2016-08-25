@@ -1,0 +1,74 @@
+<?php
+$options = get_option(AZEXO_THEME_NAME);
+if (!isset($show_sidebar)) {
+    $show_sidebar = isset($options['show_sidebar']) ? $options['show_sidebar'] : 'right';
+}
+if (!isset($template_name)) {
+    $template_name = isset($options['default_post_template']) ? $options['default_post_template'] : 'post';
+}
+if (isset($_GET['template'])) {
+    $template_name = $_GET['template'];
+}
+get_header();
+$have_posts = false;
+?>
+<div class="container <?php print (is_active_sidebar('sidebar') && $show_sidebar ? 'active-sidebar ' . esc_attr($show_sidebar) : ''); ?>">
+    <?php
+    if ($show_sidebar == 'left') {
+        get_sidebar();
+    }
+    ?>
+    <div id="primary" class="content-area">
+        <?php
+        if ($options['show_page_title']) {
+            get_template_part('template-parts/general', 'title');
+        }
+        ?>
+        <div id="content" class="site-content <?php print str_replace('_', '-', $template_name); ?> <?php print ((isset($options['infinite_scroll']) && $options['infinite_scroll']) ? 'infinite-scroll' : '') ?>" role="main">
+            <?php
+            if (isset($options['author_bio']) && $options['author_bio']) {
+                if (is_author()) {
+                    get_template_part('template-parts/general', 'author-bio');
+                }
+            }
+            ?>
+            <?php
+            if (is_page()) {
+                $paged = get_query_var('paged');
+                if (empty($paged)) {
+                    $paged = get_query_var('page');
+                }
+                query_posts('post_type=post&post_status=publish&posts_per_page=' . get_option('posts_per_page') . '&paged=' . $paged);
+            }
+            ?>
+            <?php
+            if (have_posts()) : $have_posts = true;
+                global $wp_query;
+                $post_type = isset($wp_query->query['post_type']) ? $wp_query->query['post_type'] : 'post';
+                if (is_array($post_type)) {
+                    $post_type = reset($post_type);
+                }
+                update_meta_cache($post_type, array_keys($wp_query->posts));
+                ?>
+                <?php while (have_posts()) : the_post(); ?>
+                    <?php include(locate_template('content.php')); ?>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <?php include(locate_template('content-none.php')); ?>
+            <?php endif; ?>
+
+        </div><!-- #content -->
+        <?php
+        if ($have_posts) {
+            azexo_paging_nav();
+        }
+        ?>
+    </div><!-- #primary -->
+
+    <?php
+    if ($show_sidebar == 'right') {
+        get_sidebar();
+    }
+    ?>
+</div>
+<?php get_footer(); ?>

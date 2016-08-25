@@ -1,0 +1,51 @@
+@import "variables.less";
+
+.loop-pagination() {
+    .vendor(display, flex);
+    .vendor(align-items, center);
+    a:hover {
+        color: @brand-color;
+    }
+    span.current, span.dots, a {
+        display: inline-block;
+        margin: 0;
+        padding: 0 17px;
+        margin-right: 6px;
+        line-height: @input-height;
+        height: @input-height;
+        background: @white-lighter;
+        color: @black-darker;
+        text-align: center;
+        text-decoration: none;
+        font-size: @font-size-base + 1px;
+        .vendor(box-shadow, 1px 1px 6px fade(@black-darker, 7%));
+        span {
+            display: none;
+        }
+        &.current, &:hover {
+        }
+        &.prev, &.next {         
+            font-size: @font-size-large + 3px;
+        }
+        &.prev {
+        }
+        &.next {
+        }
+        i {
+            font-family: FontAwesome;
+            &.prev::before {
+                content: "\f104";                
+            }
+            &.next::before {
+                content: "\f105";
+            }
+        }
+    }
+}
+
+nav.paging-navigation {
+    margin-top: 30px;
+    .loop-pagination {
+        .loop-pagination();
+    }
+}

@@ -1,0 +1,281 @@
+@import "variables.less";
+
+#reviews {    
+    background-color: @white-lighter;
+    .vendor(box-shadow, 1px 1px 6px fade(@black-darker, 7%));
+    #comments {
+        margin: 0;
+        padding: 0;
+        h2 {
+            font-size: @font-size-large - 1px;
+            font-weight: 400;
+            margin: 0;
+            padding: 15px 30px;
+        }
+        > p {
+            padding: 0 30px;
+        }
+        ol.commentlist {
+            border-top: 1px solid @white;
+            li {
+                .comment_container {
+                    padding: 60px 30px 88px 30px;
+                    border-bottom: 1px solid @white;
+                    margin-bottom: 10px;
+                    img {
+                        width: 65px;
+                        height: 65px;
+                        border-radius: 100%;                        
+                        display: block;
+                        float:left;
+                    }
+                    .comment-text {
+                        .vendor(display, flex);
+                        .vendor(flex-direction, column);
+                        position: relative;
+                        margin-left: 90px;    
+                        margin-top: 15px;
+                        .meta {
+                            order: 0;
+                            margin: 0;
+                            line-height: 20px;
+                            color: @gray-dark;
+                            strong {
+                                color: @black;
+                                font-family: 'Droid Serif', sans-serif;
+                                font-size: @font-size-large - 1px;
+                                font-weight: 400;
+                                font-style: normal;
+                                display: block;
+                                a {
+                                    color: @black;
+                                }
+                            }
+                            time {
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                display: block;
+                                font-size: @font-size-base;
+                                color: @black;
+                                font-weight: 300;
+                            }
+                        }
+                        .description {
+                            order: 1;
+                            margin-top: 13px;
+                            p:last-child {
+                                margin: 0;
+                            }
+                        }
+                        .ratings {
+                            order: 2;
+                            display: table;
+                            width: 80%;
+                            margin: 40px 0;
+                            > .star-rating {
+                                display: table-cell;
+                                vertical-align: middle;
+                                width: 25%;
+                                span {
+                                    @size: 44px;
+                                    display: inline-block;
+                                    width: auto !important;
+                                    font-size: 0;
+                                    line-height: @size;
+                                    height: @size;
+                                    strong {
+                                        font-size: @size;
+                                        display: inline-block;
+                                        line-height: @size;
+                                        font-weight: 300;
+                                        color: @brand-color;
+                                    }
+                                }
+                            }
+                            .marks {
+                                display: table-cell;
+                                vertical-align: top;
+                                width: 75%;
+                                .star-rating {
+                                    position: relative;
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        left: 0;
+                                        right: 0;
+                                        top: ~"calc(50% - 2px)";
+                                        border-top: 2px dotted @gray;
+                                    }
+                                    label {
+                                        position: relative;
+                                        background-color: @white-lighter;
+                                        margin: 0;
+                                        font-weight: 300;
+                                        padding-right: @font-size-base;
+                                        color: @black;
+                                        font-size: @font-size-base;
+                                        letter-spacing: 0;
+                                        text-transform: none;
+                                    }
+                                    span {
+                                        padding-left: @font-size-base;
+                                        position: relative;
+                                        background-color: @white-lighter;
+                                        float: right;
+                                        display: inline-block;
+                                        width: auto !important;
+                                        font-size: 0;
+                                        line-height: @font-size-base * 1.8;
+                                        height: @font-size-base * 1.8;
+                                        strong {
+                                            font-size: @font-size-base;
+                                            display: inline-block;
+                                            line-height: @font-size-base * 1.8;
+                                            font-weight: 300;
+                                            color: @brand-color;
+                                            &::after {
+                                                content: ".0";
+                                            }                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .like {
+                            position: absolute;
+                            top: 100%;
+                            right: 20%;
+                            font-weight: 300;
+                            line-height: 1em;
+                            .like(@accent-1-color);
+                        }
+                    }
+                    &::after {
+                        content:"";
+                        display:table;
+                        clear:both;
+                    }
+                }
+            }
+        }
+    }
+    #review_form_wrapper {
+        padding: 30px;
+        #review_form {
+            label {
+                margin-bottom: 0;
+                font-weight: 300;
+                font-size: @font-size-base - 1px;
+                text-transform: capitalize;
+            }
+            #reply-title {
+                font-size: @font-size-large - 1px;
+                font-weight: 400;
+                margin-top: 0;
+                margin-bottom: 25px;
+            }
+            #commentform {
+                position: relative;
+                overflow: hidden;
+                .comment-form-author {
+                    float: left;
+                    width: 50%;
+                    padding-right: 10px;
+                    box-sizing: border-box;
+                    margin-bottom: 15px;
+                }
+                .comment-form-email {
+                    float: left;
+                    width: 50%;
+                    padding-left: 10px;
+                    box-sizing: border-box;
+                    margin-bottom: 15px;
+                }
+                .comment-form-rating {
+                    display: none;
+                }
+                .comment-form-rating, .comment-form-mark, .comment-form-comment {
+                    width: 100%;
+                }
+                .comment-form-rating, .comment-form-mark {
+                    margin: 0 0 3px 0;
+                    .stars {
+                        margin: 5px 0 0 0;
+                        span {
+                            a {
+                                display: inline-block;
+                                font-weight: 700;
+                                margin-right: 0;
+                                text-indent: -9999px;
+                                position: relative;
+                                border-bottom: 0!important;
+                                outline: 0;
+                                border: none;
+                                font-family: FontAwesome;
+                                color: @white-darker;
+                                &.star-1, &.star-2, &.star-3, &.star-4, &.star-5{
+                                    &::after {
+                                        text-indent: 0;
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                    }                                
+                                    &.active::after {
+                                        color: @brand-color;
+                                    }
+                                }                              
+                                &.star-1 {
+                                    width: 1.5em;
+                                    &::after {
+                                        content: "\f005";
+                                    }
+                                }
+                                &.star-2 {
+                                    width: 2.5em;
+                                    &::after {
+                                        content: "\f005\f005";
+                                    }
+                                }
+                                &.star-3 {
+                                    width: 3.5em;
+                                    &::after {
+                                        content: "\f005\f005\f005";
+                                    }
+                                }
+                                &.star-4 {
+                                    width: 4.5em;
+                                    &::after {
+                                        content: "\f005\f005\f005\f005";
+                                    }
+                                }
+                                &.star-5 {
+                                    width: 5.5em;
+                                    &::after {
+                                        content: "\f005\f005\f005\f005\f005";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .comment-form-comment {
+                    margin-top: 3px;
+                    margin-bottom: 0;
+                }
+                .form-submit {     
+                    margin: 20px 0 0 0;
+                    #submit {
+                        .button(@white-lighter, @brand-color);
+                    }                
+                }
+            }
+            .social_connect_ui  {
+                .comment-form-social-connect {
+                    margin: 0;
+                }
+            }        
+        }
+    }
+}
+
