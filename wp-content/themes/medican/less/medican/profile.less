@@ -1,0 +1,32 @@
+body.dashboard {
+    .single-profile {
+        > .entry-data {
+            > .entry-header {
+                position: static;
+                left: auto;
+                right: auto;
+                bottom: auto;
+                padding: 0;
+                margin-bottom: 20px;
+                > .entry-title {
+                    color: @black;
+                }                
+            }
+        }
+    }
+}
+
+.single-profile {
+    .single-product();
+}
+
+.list-profile.entry {
+    margin-bottom: 30px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .shop-product-entry();
+    @media (max-width: 992px) {
+        .shop-product-vertical();
+    }        
+}

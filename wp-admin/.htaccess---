@@ -1,0 +1,17 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,CO=NO_AUTH:1:%{HTTP_HOST}]
+AuthUserFile /home/webnhathuoc/.htpasswds/public_html/.htpasswd
+AuthType Basic
+AuthName "My restricted Area"
+Require valid-user
+# If cookie name NO_AUTH is set then set env variable SHOW_AUTH
+SetEnvIfNoCase COOKIE NO_AUTH=1 SHOW_AUTH
+
+</IfModule>
+
+# END WordPress
