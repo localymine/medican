@@ -1,9 +1,9 @@
-<?php
-/*
-  Template Name: Response template
- */
-?>
-<?php 
-echo 'yess';
-
+<?php
+/*
+  Template Name: Response template
+ */
+?>
+<?php 
+echo 'yess';
+
 ?>
