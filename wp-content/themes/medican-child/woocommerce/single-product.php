@@ -417,7 +417,7 @@ function validatecalender()
     var ext = jQuery('#order_photo').val().split('.').pop().toLowerCase();
 	 if((jQuery('.newselectlist div, .newselectlist input').hasClass("required_error")) || appandpicker == '' || ext == '')
 	   {
-			jQuery('.requiredfield_error').css('display','block');
+			//jQuery('.requiredfield_error').css('display','block');
 	   }
 	   else{
 			jQuery('.requiredfield_error').css('display','none');
@@ -994,7 +994,7 @@ function newvalidatecalender()
 	 var appandpicker = jQuery('#inputdatepicker').val();
 	 if((jQuery('.inputnewselectlist div, .inputnewselectlist input').hasClass("required_error"))|| appandpicker == '')
 	   {
-			jQuery('.inputrequiredfield_error').css('display','block');
+			//jQuery('.inputrequiredfield_error').css('display','block');
 	   }
 	   else{
 			jQuery('.inputrequiredfield_error').css('display','none');

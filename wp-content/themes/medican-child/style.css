@@ -37,7 +37,7 @@ body {
 font-family: OpenSans;
 }
 .azqf-query-form .taxonomy-dropdown span, .location > input, .entry-content .customsearch .geo-location .location > input, .azqf-query-form .radius input,.azqf-query-form input {
-color: #c1c1c1 !important;
+color: #797979 !important;
 font-family: OpenSans !important;
 font-size: 14px !important;
 }

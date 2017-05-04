@@ -3,8 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/medican.com/.htaccess</file>
+            <file>file:/var/www/html/medican.com/wp-content/themes/medican-child/css/demo-page.css</file>
             <file>file:/var/www/html/medican.com/wp-config.php</file>
+            <file>file:/var/www/html/medican.com/wp-content/themes/medican/index.php</file>
+            <file>file:/var/www/html/medican.com/wp-content/themes/medican/list.php</file>
+            <file>file:/var/www/html/medican.com/wp-content/plugins/az_query_form/az_query_form.php</file>
+            <file>file:/var/www/html/medican.com/wp-content/themes/medican/header.php</file>
         </group>
     </open-files>
 </project-private>

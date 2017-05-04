@@ -1156,7 +1156,7 @@ function azexo_post_thumbnail_field($template_name = false) {
     $size = azexo_get_image_sizes($thumbnail_size);
     $zoom = isset($options[$template_name . '_zoom']) && esc_attr($options[$template_name . '_zoom']) ? 'zoom' : '';
     ?>                
-    <a href="<?php esc_url(the_permalink()); ?>">
+    <!--a href="<?php esc_url(the_permalink()); ?>"-->
         <?php if ($lazy): ?>
             <?php if ($thumbnail_size == 'full'): ?>
                 <img class="image lazy <?php print esc_attr($zoom); ?>" data-src="<?php print esc_url($url[0]); ?>" alt="">
@@ -1172,7 +1172,7 @@ function azexo_post_thumbnail_field($template_name = false) {
                 </div>
             <?php endif; ?>
         <?php endif; ?>
-    </a>
+    <!--/a-->
     <?php
 }
 
