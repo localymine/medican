@@ -25,7 +25,7 @@ global $wp_query;
 if ( $wp_query->max_num_pages <= 1 ) {
 	return;
 }
-
+$page_num = $wp_query->max_num_pages>3? 3: $wp_query->max_num_pages;
 ?>
 <nav class="woocommerce-pagination">
     <span> Page:</span>
@@ -35,7 +35,7 @@ if ( $wp_query->max_num_pages <= 1 ) {
 			'format'       => '',
 			'add_args'     => false,
 			'current'      => max( 1, get_query_var( 'paged' ) ),
-			'total'        => 3,
+			'total'        => $page_num ,
 			/* 'total'        => $wp_query->max_num_pages, */
 			'prev_text'    => '&larr;',
 			'next_text'    => '&rarr;',

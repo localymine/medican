@@ -1,8 +1,13 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
+/*add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
 function enqueue_parent_styles() {
     wp_enqueue_style( 'style.css', get_stylesheet_directory_uri().'/style.css' );
-}
+}*/
+
+function prefix_add_footer_styles() {
+    wp_enqueue_style( 'style.css', get_stylesheet_directory_uri().'/style.css' );
+};
+add_action( 'get_footer', 'prefix_add_footer_styles' );
 
 function wpdocs_theme_name_scripts() {
    wp_enqueue_style( 'demo-page.css', get_stylesheet_directory_uri().'/css/demo-page.css' );

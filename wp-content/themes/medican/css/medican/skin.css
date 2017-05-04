@@ -11020,8 +11020,8 @@ table.shop_table tfoot tr.order-total .amount {
 }
 @font-face {
   font-family: 'WooCommerce';
-  src: url('http://localhost/wordpress-demo/wp-content/themes/medican/fonts/WooCommerce.eot');
-  src: url('http://localhost/wordpress-demo/wp-content/themes/medican/fonts/WooCommerce.eot?#iefix') format('embedded-opentype'), url('http://localhost/wordpress-demo/wp-content/themes/medican/fonts/WooCommerce.woff') format('woff'), url('http://localhost/wordpress-demo/wp-content/themes/medican/fonts/WooCommerce.ttf') format('truetype'), url('http://localhost/wordpress-demo/wp-content/themes/medican/fonts/WooCommerce.svg#WooCommerce') format('svg');
+  src: url('../../fonts/WooCommerce.eot');
+  src: url('../../fonts/WooCommerce.eot?#iefix') format('embedded-opentype'), url('../../fonts/WooCommerce.woff') format('woff'), url('../../fonts/WooCommerce.ttf') format('truetype'), url('../../fonts/WooCommerce.svg#WooCommerce') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -11868,8 +11868,8 @@ nav.woocommerce-MyAccount-navigation ul li a {
 }
 @font-face {
   font-family: 'webfont-medical-icons';
-  src: url('http://localhost/wordpress-demo/wp-content/themes/medican/fonts/webfont-medical-icons.eot');
-  src: url('http://localhost/wordpress-demo/wp-content/themes/medican/fonts/webfont-medical-icons.eot?#iefix') format('embedded-opentype'), url('http://localhost/wordpress-demo/wp-content/themes/medican/fonts/webfont-medical-icons.ttf') format('truetype'), url('http://localhost/wordpress-demo/wp-content/themes/medican/fonts/webfont-medical-icons.woff') format('woff'), url('http://localhost/wordpress-demo/wp-content/themes/medican/fonts/webfont-medical-icons.svg#webfont-medical-icons') format('svg');
+  src: url('../../fonts/webfont-medical-icons.eot');
+  src: url('../../fonts/webfont-medical-icons.eot?#iefix') format('embedded-opentype'), url('../../fonts/webfont-medical-icons.ttf') format('truetype'), url('../../fonts/webfont-medical-icons.woff') format('woff'), url('../../fonts/webfont-medical-icons.svg#webfont-medical-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }

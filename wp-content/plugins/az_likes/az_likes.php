@@ -249,6 +249,7 @@ function azpl_get_simple_likes_button($post_id, $is_comment = NULL) {
     $output = '<span class="sl-wrapper customlikeclass"><a href="' . esc_url(admin_url('admin-ajax.php?action=process_simple_like' . '&nonce=' . $nonce . '&post_id=' . $post_id . '&disabled=true&is_comment=' . $is_comment)) . '" class="sl-button' . $post_id_class . $class . $comment_class . '" data-nonce="' . $nonce . '" data-post-id="' . $post_id . '" data-iscomment="' . $is_comment . '" title="' . $title . '">' . $icon . $count . '</a>' . $loader . '</span><script>jQuery(document).ready(function()
 {
 	jQuery("body.single-product #additional .customlikeclass .sl-button").css("pointer-events","none");
+	jQuery(".customlikeclass .sl-icon").change(function(){console.log("done")});
 if(jQuery(".customlikeclass .sl-button").attr("title")=="Unlike")
             {
             jQuery(".removetofev").css("display","block"); 

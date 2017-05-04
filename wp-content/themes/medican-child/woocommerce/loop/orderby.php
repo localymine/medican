@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<form class="woocommerce-ordering" method="get">
+<!--form class="woocommerce-ordering" method="get">
 	<select name="orderby" class="orderby">
 		<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
             <?php if(esc_attr( $id )=='longitude-asc')
@@ -45,4 +45,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 			}
 		}
 	?>
-</form>
+</form-->

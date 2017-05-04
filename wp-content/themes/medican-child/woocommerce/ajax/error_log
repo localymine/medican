@@ -1,5 +1,3 @@
-[20-Mar-2017 10:53:07 UTC] PHP Parse error:  syntax error, unexpected 'sendMail' (T_STRING) in /home/webnhathuoc/public_html/wp-content/themes/medican-child/sendmail.php on line 1
-[20-Mar-2017 10:56:05 UTC] PHP Parse error:  syntax error, unexpected 'sendMail' (T_STRING) in /home/webnhathuoc/public_html/wp-content/themes/medican-child/sendmail.php on line 1
-[22-Mar-2017 04:05:26 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/webnhathuoc/public_html/wp-content/themes/medican-child/woocommerce/ajax/ordercreateajax.php on line 26
-[23-Mar-2017 10:49:40 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/webnhathuoc/public_html/wp-content/themes/medican-child/woocommerce/ajax/ordercreateajax.php on line 26
-[23-Mar-2017 11:29:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/webnhathuoc/public_html/wp-content/themes/medican-child/woocommerce/ajax/ordercreateajax.php on line 26
+[02-May-2017 10:49:43 UTC] PHP Notice:  Undefined index: term in /home/webnhathuoc/public_html/wp-content/themes/medican-child/woocommerce/ajax/productname.php on line 2
+[02-May-2017 17:23:09 UTC] PHP Fatal error:  Call to undefined function pdate_post_meta() in /home/webnhathuoc/public_html/wp-content/themes/medican-child/woocommerce/ajax/productname.php on line 29
+[02-May-2017 17:29:30 UTC] PHP Fatal error:  Call to undefined function pdate_post_meta() in /home/webnhathuoc/public_html/wp-content/themes/medican-child/woocommerce/ajax/productname.php on line 28

@@ -14,7 +14,7 @@
    
     // Default Options
     var $options  = {
-      "csclass"         : "custom-select",  // Class to match
+	  "csclass"         : "custom-select",  // Class to match
       "search"          : true,             // Is searchable?
       "numitems"        : 4,                // Number of results per page
       "searchblank"     : false,            // Search blank value options?

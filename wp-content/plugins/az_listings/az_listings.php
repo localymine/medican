@@ -980,6 +980,47 @@ function azl_wp_head() {
             }
         }
     }
+	
+	print 'cust_locations = [];';
+	$atts = shortcode_atts(array(
+        'post_type' => 'product',
+        'all' => false,
+            ), $atts, 'azl-google-map');
+
+
+    azl_google_map_scripts();
+
+    global $wp_query;
+    $locations = array();
+
+    $query_vars = false;
+    if (azl_is_post_type_query($wp_query, $atts['post_type'])) {
+        $query_vars = $wp_query->query_vars;
+        $query_vars['nopaging'] = true;
+        $query_vars['posts_per_page'] = -1;
+    }
+    if ($atts['all']) {
+        $query_vars = array(
+            'post_type' => $atts['post_type'],
+            'nopaging' => true,
+            'posts_per_page' => -1,
+        );
+    }
+
+    if ($query_vars) {
+        $query = new WP_Query($query_vars);
+        $all_locations = azl_get_all_locations();
+        //$query->set('post__in', array_keys($all_locations));
+        if (count($query->posts) > 0) {
+			$strt = 0;
+            foreach ($query->posts as $post) {
+                if (isset($all_locations[$post->ID]) && $strt<=29) {
+                    print 'cust_locations['.$strt.'] ="'.$post->ID.'";';
+					$strt++;
+                }
+            }
+        }
+    }
     print '</script>';
 }
 
@@ -995,7 +1036,7 @@ function azl_google_map_scripts() {
     azl_google_maps_js();
     wp_enqueue_script('jquery-ui-resizable');
     wp_enqueue_script('infobox');
-    wp_enqueue_script('markerclusterer');
+    //wp_enqueue_script('markerclusterer');
     wp_enqueue_script('richmarker');
     wp_enqueue_script('azl');
     wp_enqueue_script('mustache');

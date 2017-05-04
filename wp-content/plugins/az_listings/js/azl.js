@@ -8,7 +8,7 @@
             markerContent: '<div class="map-marker">' +
                     '<div class="icon">' +
                     '<img class="marker" src="' + (('markerImage' in azl) ? azl.markerImage : azl.directory + '/images/marker.png') + '">' +
-                    '<div class="cat" style="background-image: url(\'{{marker_image}}\')"></div>' +
+                    '<div class="cat" style="background-image: url(\'{{marker_image}}\')"><span class="findme">{{counter}}</span></div>' +
                     '</div>' +
                     '</div>',
             infoboxOptions: {
@@ -76,9 +76,9 @@
             });
             if (typeof $(wrapper).find('.azl-map').data('markers') !== 'undefined') {
                 var markers = $(wrapper).find('.azl-map').data('markers');
-                if (typeof $(wrapper).find('.azl-map').data('markerClusterer') !== 'undefined') {
+                /*if (typeof $(wrapper).find('.azl-map').data('markerClusterer') !== 'undefined') {
                     $(wrapper).find('.azl-map').data('markerClusterer').removeMarkers(markers);
-                }
+                }*/
                 for (var i = 0; i < markers.length; i++) {
                     markers[i].setMap(null);
                 }
@@ -120,13 +120,19 @@
                     var markers = [];
                     var activeMarker = false;
                     var lastClicked = false;
-                    for (var id in azl.locations) {
+					var location_counter = 1;
+                    for (var id in cust_locations) {
+						id = cust_locations[id];
                         var location = new google.maps.LatLng(parseFloat(azl.locations[id].latitude), parseFloat(azl.locations[id].longitude));
                         bounds.extend(location);
 
                         var markerContent = document.createElement('DIV');
                         markerContent.innerHTML = Mustache.render(azl.markerContent, azl.locations[id]);
-
+						location_counter = ("0" + location_counter).slice(-2);
+						var location_num = {
+							counter:location_counter,
+						};
+                        markerContent.innerHTML = Mustache.render(azl.markerContent, location_num);
                         var marker = new RichMarker({
                             position: location,
                             map: map,
@@ -135,7 +141,7 @@
                         });
                         marker.post_id = id;
                         markers.push(marker);
-
+						location_counter++;
 
                         (function(marker) {
                             google.maps.event.addDomListener(marker.content, 'click', function(event) {
@@ -233,7 +239,7 @@
                         map.load_locations();
                     });
                     google.maps.event.clearListeners(map, 'click');
-                    google.maps.event.addListener(map, 'click', function(event) {
+                    /*google.maps.event.addListener(map, 'click', function(event) {
                         if (activeMarker != false) {
                             setTimeout(function() {
                                 if ('infobox' in activeMarker) {
@@ -242,7 +248,7 @@
                                 lastClicked = 0;
                             }, 0);
                         }
-                    });
+                    });*/
                     google.maps.event.clearListeners(map, 'bounds_changed');
                     google.maps.event.addListenerOnce(map, 'bounds_changed', function(event) {
                         if (markers.length == 1)
@@ -250,14 +256,14 @@
                                 this.setZoom(14);
                             }
                     });
-                    var markerClusterer = new MarkerClusterer(map, markers, {
+                    /*var markerClusterer = new MarkerClusterer(map, markers, {
                         styles: azl.clusterStyles,
                         maxZoom: 19
                     });
                     $(wrapper).find('.azl-map').data('markerClusterer', markerClusterer);
                     markerClusterer.onClick = function(clickedClusterIcon, sameLatitude, sameLongitude) {
                         return multiChoice(sameLatitude, sameLongitude);
-                    };
+                    };*/
                 }
             }
 

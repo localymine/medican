@@ -178,9 +178,14 @@ jQuery('.tab2').trigger('click');
 
         </div>
         <div class="customtabright" style="visibility:hidden; height: 0px;">
-
-            <?php  print azl_google_map_shortcode(array());
+		<?php  
+			if (have_posts()){
+			 print azl_google_map_shortcode(array());
              remove_action('woocommerce_after_shop_loop', 'woocommerce_pagination', 10);
+			}
+			else{
+				echo '<p style="padding-top: 20px;float: left;width: 100%;text-align: center;" class="woocommerce-info">No Doctors were found matching your selection.</p>';
+			}
             ?>
             
             <!--<div id="map" style="height: 400px; width: 100%;"></div>-->

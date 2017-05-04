@@ -402,8 +402,6 @@
                         $(this).addClass('owl-lazy');
                     });
                 }
-				console.log('orig-'+items);
-				console.log('orig-'+margin);
                 var options = {
                     items: items,
                     dotsEach: items,
