@@ -1,0 +1,615 @@
+<!DOCTYPE html>         
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>AZEXO Theme Documentation</title>
+        <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800;'>
+        <link rel='stylesheet' id='style-css'  href='css/style.css' type='text/css' media='all' />
+    </head>
+
+
+    <body>
+        <a id="to_top" style="bottom: 30px;"><i class="fa-angle-up"></i></a>
+        <div id="main-wrap">
+
+            <div id="header-wrapper">
+                <div id="rd-header" class="container">
+                    <a href="#" id="logo"></a>
+                    <h3>AZEXO Theme Documentation</h3>
+
+                    <div class="links">
+                        <a href="http://themeforest.net/user/azexo/portfolio" target="_blank">Support forums</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="main-content-wrapper">
+
+                <div class="container" id="main-content">
+
+                    <div id="tab-docs">
+                        <div class="col-4">
+                            <ul class="nav-menu clearfix" id="rd-tabs">
+
+                                <li class="title section"><a>Theme guide</a></li>
+                                <li><a href="#installation">Installation</a></li>
+                                <li><a href="#import-demo-content">Import demo content for new site</a></li>
+                                <li><a href="#import-configuration">Import configuration for existing site</a></li>                                
+                                <li><a href="#update">How to update</a></li>
+                                <li><a href="#translation">Translation</a></li>
+                                <li><a href="#code-navigation">Code navigation</a></li>
+
+
+                                <li class="title section"><a>Header</a></li>
+                                <li><a href="#header-edit">Edit/create</a></li>
+                                <li><a href="#header-parts">Main header parts</a></li>
+
+
+                                <li class="title section"><a>Footer</a></li>
+                                <li><a href="#footer-edit">Edit/create</a></li>
+
+                                <li class="title section"><a>Sidebar</a></li>
+                                <li><a href="#sidebar-overview">Overview</a></li>
+                                <li><a href="#sidebar-on-pages">Sidebar on pages</a></li>
+                                <li><a href="#sidebar-on-posts">Sidebar on custom post types</a></li>
+
+                                <li class="title section"><a>Theme widgets</a></li>
+                                <li><a href="#widgets-edit">Edit/create</a></li>
+
+                                <li class="title section"><a>Post/Product templates</a></li>
+                                <li><a href="#templates-overview">Overview</a></li>
+                                <li><a href="#image-size">Image size</a></li>
+                                <li><a href="#custom-templates">Custom templates</a></li>
+                                <li><a href="#templates-vc">Visual Composer elements</a></li>
+
+                                <li class="title section"><a>Fields</a></li>
+                                <li><a href="#fields-templates">Custom fields templates</a></li>
+                                <li><a href="#fields-vc">Visual Composer elements</a></li>
+                                <li><a href="#custom-meta-fields">Registering meta keys with simple string values</a></li>
+
+                                <li class="title section"><a>Visual Composer elements with static content</a></li>
+                                <li><a href="#vc-overview">Overview</a></li>
+
+                                <li class="title section"><a>Search/Filtering forms (AZEXO Query Form plugin)</a></li>
+                                <li><a href="#query-form-edit">Edit/create</a></li>
+
+                                <li class="title section"><a>Front-end submission forms (AZEXO Listings plugin)</a></li>
+                                <li><a href="#submission-form-edit">Edit/create</a></li>
+                                <li><a href="#submission-form-status">Post status</a></li>
+
+                                <li class="title section"><a>Google Map (AZEXO Listings plugin)</a></li>
+                                <li><a href="#google-map-use">Use</a></li>
+                                <li><a href="#google-map-styles">Styles</a></li>
+
+                                <li class="title section"><a>Marketplace/Dashboard (WC Vendors plugin)</a></li>
+                                <li><a href="#wc-vendors-use">Use</a></li>
+                                
+                                <li class="title section"><a>Subscriptions (AZEXO Listings plugin)</a></li>
+                                <li><a href="#subscriptions-enable">Enable auto-hiding</a></li>
+                                <li><a href="#subscriptions-limit">Set published posts number limit for plan</a></li>
+
+                                <li class="title section"><a>AZEXO Bookings plugin</a></li>
+                                <li><a href="#bookings-enable">Enable booking feature</a></li>
+
+                                <li class="title section"><a>AZEXO Vouchers plugin</a></li>
+                                <li><a href="#vouchers-enable">Enable vouchers generation</a></li>
+                                <li><a href="#vouchers-redeem">Add vouchers redeem form</a></li>
+
+                                <li class="title section"><a>AZEXO Group Buying plugin</a></li>
+                                <li><a href="#group-buying-enable">Enable group buying feature</a></li>
+                                <li><a href="#group-buying-field">Add "sales left" to product</a></li>
+
+                            </ul>
+                        </div>
+
+                        <div class="col-8">
+
+                            <div id="contents">
+
+                                <div id="installation">
+                                    <h3>Installation</h3>
+                                    <ol>
+                                        <li>Theme use big amount of configuration settings which can be installed via demo content import.</li>
+                                        <li>Configuration settings use post ID for establish links so import demo content will work correctly only on fresh WP installation.</li>
+                                        <li>Download the Theme archive and extract the files it contains.</li>
+                                        <li>Using an FTP client to access your host web server, upload Theme folder (with all files) to the wp-content/themes directory provided by WordPress. </li>
+                                        <li>Activate theme.</li>
+                                    </ol>
+                                    <p>Find message at the top of the admin screen<br>
+                                        <img alt="" src="images/begin-activating-plugins.png">
+                                    </p>
+                                    <p>Install and activate all required plugins<br>
+                                        <img alt="" src="images/activate-plugins.png">
+                                    </p>
+                                </div>
+                                
+                                <div id="import-demo-content">
+                                    <h3>Import demo content for new site</h3>
+                                    <p>Find menu item in administration sidebar<br>
+                                        <img alt="" src="images/azexo-import.png">
+                                    </p>
+                                    <p>Import data with both checkboxes enabled<br>
+                                        <img alt="" src="images/import-data.png">
+                                    </p>
+                                    <p>After import you need:</p>
+                                    <ol>
+                                        <li>Enable Visual Composer for Page.</li>     
+                                        <li>Select appropriate menu in "VC Widgets" for all "WP Custom Menu" elements settings.</li>
+                                        <li>Configure all used plugins by theme</li>
+                                    </ol>
+                                </div>
+                                
+                                <div id="import-configuration">
+                                    <h3>Import configuration for existing site</h3>
+                                    <p>Find menu item in administration sidebar<br>
+                                        <img alt="" src="images/azexo-import.png">
+                                    </p>
+                                    <p>Import configuration<br>
+                                        <img alt="" src="images/import-configuration.png">
+                                    </p>
+                                    <p>After import you need:</p>
+                                    <ol>
+                                        <li>Enable Visual Composer for Page.</li>     
+                                        <li>Select appropriate menu in "VC Widgets" for all "WP Custom Menu" elements settings.</li>
+                                        <li>Create all contact forms used by "Contact Form 7" elements in "VC Widgets"</li>                                        
+                                        <li>Place imported "VC Widgets" in sidebars and configure visibility rules</li>
+                                        <li>Use AZEXO elements in Visual Composer to make pages</li>
+                                        <li>Configure all used plugins by theme</li>
+                                    </ol>
+                                </div>
+
+                                <div id="translation">
+                                    <h3>Places which need to translate</h3>
+                                    <ol>
+                                        <li>Translate theme via loco</li>
+                                        <li>Translate AZEXO plugins via loco</li>
+                                        <li>Replace strings in form editor (or via JSON) of "AZEXO Query Forms" and "AZEXO Listings" plugins</li>
+                                        <li>Replace strings in "AZEXO Options > Templates configuration"</li>
+                                        <li>Replace strings in "AZEXO Options > WooCommerce templates configuration"</li>
+                                        <li>Replace strings in fields tabs "AZEXO Options > Fields configuration"</li>
+                                        <li>Translate all used plugins via loco</li>
+                                        <li>Replace strings in Contact Form 7 templates</li>
+                                        <li>External products "buy now" button – translated in product settings</li>
+                                    </ol>
+                                </div>
+
+                                <div id="update">
+                                    <h3>How to update</h3>
+                                    <ol>
+                                        <li>Make backup database, theme and AZEXO plugins</li>
+                                        <li>Remove old theme folder</li>
+                                        <li>Extract and place new theme folder</li>
+                                        <li>Update (or install new) required plugins "Appearance > Install Plugins"</li>
+                                    </ol>
+                                </div>
+
+                                <div id="code-navigation">
+                                    <h3>Code navigation</h3>
+                                    <ol>
+                                        <li><b>list.php</b> - universal list of contents template</li>
+                                        <li><b>*.php in theme root directory</b> - standard WordPres template files</li>
+                                        <li><b>yarpp-template-default.php</b> - YARPP plugin related posts template</li>
+                                        <li><b>azexo/exporter/exporter.php</b> - export theme settings for developers</li>
+                                        <li><b>azexo/importer/*.php</b> - import demo content code</li>
+                                        <li><b>azexo/icons/*.php</b> - Visual Composer additional icons support</li>
+                                        <li><b>azexo/importer/data</b> - demo content files</li>
+                                        <li><b>azexo/options/*.json</b> - default theme options for skin</li>
+                                        <li><b>azexo/less-variables.php</b> - link less variables with theme settings</li>
+                                        <li><b>azexo/options-init.php</b> - REDUX framework theme settings configuration</li>
+                                        <li><b>azexo/tgm-init.php</b> - TGM class configuration</li>
+                                        <li><b>azexo/vc_extend.php</b> - Visual Composer extend configuration</li>
+                                        <li><b>azexo/woocommerce.php</b> - WooCommerce related theme hooks</li>
+                                        <li><b>less/*.less</b> - theme styles (table of contents in theme style.css file)</li>
+                                        <li><b>fields</b> - fields PHP templates used in theme</li>
+                                        <li><b>css</b> - CSS theme styles to work without WP-Less plugin and animation CSS libraries</li>
+                                        <li><b>fonts</b> - fonts files</li>
+                                        <li><b>images</b> - images used by theme</li>
+                                        <li><b>js/azexo.js</b> - main JS theme script</li>
+                                        <li><b>js/azwoo.js</b> - main JS theme script for WooCommerce plugin</li>
+                                        <li><b>js/*.js</b> - JS libraries</li>
+                                        <li><b>languages</b> - theme translation files</li>
+                                        <li><b>page-templates/*.php</b> - WordPress page templates</li>
+                                        <li><b>plugins</b> - WordPress plugins distributives required by theme</li>
+                                        <li><b>post-like-system</b> - post like feature files</li>
+                                        <li><b>redux-extensions</b> - REDUX framework extensions</li>                                        
+                                        <li><b>template-parts</b> - template parts which reuse in other theme templates</li>
+                                        <li><b>tgm</b> - TGM class</li>
+                                        <li><b>vc_templates</b> - new and overridden Visual Composer elements</li>
+                                        <li><b>widgets</b> - widgets provided by theme</li>
+                                        <li><b>wc-vendors</b> - templates for WC Vendors plguin</li>
+                                        <li><b>woocommerce</b> - templates for WooCommerce plguin</li>                                        
+                                    </ol>
+
+                                </div>
+
+                                <div id="header-edit">
+                                    <h3>How to edit/create header</h3>
+                                    <p>Header implementation based on (ordered as it rendered in HTML):</p>
+                                    <ol>
+                                        <li><b>Header sidebar</b> - which support only wide "VC Widgets"</li>
+                                        <li><b>Main header DIV</b> - which support only header parts like: logo, primary_menu, secondary_menu, mobile_menu, mobile_menu_button, search</li>
+                                        <li><b>Middle sidebar</b> - which support only wide "VC Widgets" and can be used as part of post (or any custom post type) template by use "AZEXO Field" or "AZEXO Post" VC element.</li>
+                                    </ol>
+                                    <p>Header/Middle sidebars use "JP Widget Visibility" plugin (alternative plugins "Widget Logic", "Conditional Widgets" also can be used) to allow show different header on different pages.</p>
+                                    <p>All used "VC Widgets" in Header/Middle sidebars can be found in "VC Widgets" list of left admin sidebar and can be edited via Visual Composer.<br>
+                                        <img src="images/vc-widgets.png" alt=""/>
+                                    </p>
+                                    <p>If you need to enable theme header on existing site then you need:</p>
+                                    <ol>
+                                        <li>Import theme configuration</li>
+                                        <li>Add appropriate "VC Widgets" to Header/Middle sidebars</li>
+                                        <li>Configure visibility rules of this widgets</li>
+                                    </ol>
+                                    <p>To make boxed content inside "VC Widget" of header - "Row" VC element must have "container" class<br>
+                                        <img alt="" src="images/container-row-class.png">
+                                    </p>                                    
+                                </div>
+
+                                <div id="header-parts">
+                                    <h3>Main header parts</h3>
+                                    <p>Theme have settings to set ordered list of header parts (for Main header DIV):<br>
+                                        <img src="images/header-parts.png" alt=""/>
+                                    </p>
+                                    <p>Theme can use custom header part which can be implemented as PHP template which must be placed in "template-parts" folder with "header-" prefix in file name. In this case it can be selected in "Header parts" theme settings.</p>
+                                </div>
+
+                                <div id="footer-edit">
+                                    <h3>How to edit/create footer</h3>
+                                    <p>Footer implementation based on <b>Footer sidebar</b> - which support only wide "VC Widgets" and can be used as part of post (or any custom post type) template by use "AZEXO Field" or "AZEXO Post" VC element.</p>
+                                    <p>Footer sidebar use "JP Widget Visibility" plugin (alternative plugins "Widget Logic", "Conditional Widgets" also can be used) to allow show different footer on different pages.</p>
+                                    <p>All used "VC Widgets" in Footer sidebar can be found in "VC Widgets" list of left admin sidebar and can be edited via Visual Composer.<br>
+                                        <img src="images/vc-widgets.png" alt=""/>
+                                    </p>
+                                    <p>If you need to enable theme footer on existing site then you need:</p>
+                                    <ol>
+                                        <li>Import theme configuration</li>
+                                        <li>Add appropriate "VC Widgets" to Footer sidebar</li>
+                                        <li>Configure visibility rules of this widgets</li>
+                                    </ol>
+                                    <p>To make boxed content inside "VC Widget" of footer - "Row" VC element must have "container" class<br>
+                                        <img alt="" src="images/container-row-class.png">
+                                    </p>                                    
+                                </div>
+
+                                <div id="widgets-edit">
+                                    <h3>How to edit/create widget</h3>
+                                    <p>Many of theme widgets implemented as "VC Widget" to allow use same VC elements on pages and widgets.</p>
+                                    <p>All used "VC Widgets" in sidebars can be found in "VC Widgets" list of left admin sidebar and can be edited via Visual Composer.<br>
+                                        <img src="images/vc-widgets.png" alt=""/>
+                                    </p>
+                                    <p>Every "VC Widget" which use in sidebars must have root "Row" element with 1 column and "h-padding-0" class<br>
+                                        <img alt="" src="images/widget-row-settings.png">
+                                    </p>
+                                    <p>If you need to enable theme widgets on existing site then you need:</p>
+                                    <ol>
+                                        <li>Import theme configuration</li>
+                                        <li>Add appropriate "VC Widgets" to sidebars</li>
+                                        <li>Configure visibility rules of this widgets</li>
+                                    </ol>                                    
+                                </div>
+
+                                <div id="sidebar-overview">
+                                    <h3>Sidebar overview</h3>
+                                    <p>Theme use two sidebars for classic WP widgets:</p>
+                                    <ol>
+                                        <li><b>Shop sidebar</b> - mostly used on WooCommerce related pages</li>
+                                        <li><b>Right/left sidebar</b> - mostly used on blog related pages</li>
+                                    </ol>
+                                    <p>To more precise control widgets visibility on site - theme use "JP Widget Visibility" plugin (alternative plugins "Widget Logic", "Conditional Widgets" also can be used).</p>
+                                </div>
+
+                                <div id="sidebar-on-pages">
+                                    <h3>Sidebar on pages</h3>
+                                    <p>Theme provide page templates to control visibility of sidebars:<br>
+                                        <img alt="" src="images/sidebar-on-pages.png">
+                                    </p>
+                                </div>
+
+                                <div id="sidebar-on-posts">
+                                    <h3>Sidebar on custom post types</h3>
+                                    <p>Theme provide settings to control visibility of sidebars on custom post types:<br>
+                                        <img alt="" src="images/sidebar-on-posts.png">
+                                    </p>
+                                </div>
+
+                                <div id="templates-overview">
+                                    <h3>Post/Product templates overview</h3>
+                                    <p>For all Post/Product HTML rendering theme use general HTML structure:<br>
+<code>&#x3C;div class=&#x22;<strong class="alt">entry</strong>&#x22;&#x3E;
+    &#x3C;div class=&#x22;<strong class="alt">entry-thumbnail</strong> (or entry-gallery, or entry-video)&#x22;&#x3E;
+        <b>used for showing media part of post/product</b>
+        &#x3C;div class=&#x22;<strong class="alt">entry-hover</strong>&#x22;&#x3E;
+            <b>mostly used for fields which showed when mouse is hovered thumbnail</b>
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;<strong class="alt">entry-data</strong>&#x22;&#x3E;
+        <b>used for showing textual part of post/product</b>
+        &#x3C;div class=&#x22;<strong class="alt">entry-header</strong>&#x22;&#x3E;
+            &#x3C;div class=&#x22;<strong class="alt">entry-extra</strong>&#x22;&#x3E;
+                <b>mostly used for any fields above title</b>
+            &#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;<strong class="alt">entry-title</strong>&#x22;&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;<strong class="alt">entry-meta</strong>&#x22;&#x3E;
+                <b>mostly used for any fields under title</b>
+            &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;<strong class="alt">entry-content</strong> (or entry-summary)&#x22;&#x3E;
+            <b>used to show content or excerpt with more button possibility</b>
+        &#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;<strong class="alt">entry-footer</strong>&#x22;&#x3E;
+            <b>mostly used for any fields under content</b>
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;<strong class="alt">entry-additions</strong>&#x22;&#x3E;
+        <b>rarely used for any fields for free positioning</b>
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code>
+                                    </p>                                    
+                                    <p>Theme allow to choose which fields will rendered in every DIV of every post/product template:<br>
+                                        <img alt="" src="images/post-template-divs.png">
+                                    </p>
+                                </div>
+
+                                <div id="custom-templates">
+                                    <h3>Custom Post/Product templates</h3>
+                                    <p>Theme allow to create new custom templates via settings and generate new settings tabs automatically:<br>
+                                        <img alt="" src="images/custom-templates.png">
+                                    </p>                                    
+                                </div>
+
+                                <div id="templates-vc">
+                                    <h3>Visual Composer elements with Post/Product templates support</h3>
+                                    <p>Visual Composer elements can be found in AZEXO tab:</p>
+                                    <ol>
+                                        <li><b>AZEXO - Posts list</b> for rendering any post type list with any template (with carousel support).</li>
+                                        <li><b>AZEXO - Post</b> for rendering any post type with any template (without Post ID will be rendered current queried post). Useful for header, footer and widgets as single post/product template part.</li>
+                                    </ol>
+                                </div>
+                                
+                                <div id="image-size">
+                                    <h3>How to change image cropping and size</h3>
+                                    
+                                    <p>Theme not have single standard for image dimensions – it crop image automatically for fast page load and output image in background cover mode to show image with any dimensions. if you have standard image dimensions on your site, then you need to set:
+                                    </p>                                    
+                                    <ol>
+                                        <li>image cropping in "AZEXO Options > Templates configuration > Shop product > Thumbnail size" (where "Shop product" is template name) for every template<br>
+                                            <img alt="" src="images/image-cropping.png">
+                                        </li>
+                                        <li>"max-height" or "height" CSS property for DIV which contain product image as background (with ".image" class) - use template name (like "shop-product") class in your selectors - for every template<br>
+                                            <img alt="" src="images/image-max-height.png">
+                                        </li>
+                                    </ol>                                       
+                                    <p>In this <a href="https://youtu.be/ql_TMCaYTzI">video</a> showed one example for image size changing in AZEXO theme framework.
+                                    </p>
+                                </div>
+
+                                <div id="fields-templates">
+                                    <h3>Custom fields templates</h3>
+                                    <p>Custom field can be implemented as PHP template which must be placed in "fields" folder and started with:</p>
+<code>&#x3C;?php
+/*
+Field Name: Product event date time
+*/
+?&#x3E;</code>
+                                    <p>In this case custom field will be registered in theme settings and Visual Composer elements automatically.</p>
+                                </div>
+
+                                <div id="fields-vc">
+                                    <h3>Visual Composer elements with theme fields support</h3>
+                                    <p>Visual Composer elements can be found in AZEXO tab:</p>
+                                    <ol>
+                                        <li><b>AZEXO - Post field</b> for rendering any field (without Post ID data will take from current queried post). Useful for header, footer and widgets as single post/product template field.</li>
+                                    </ol>
+                                </div>
+
+                                <div id="custom-meta-fields">
+                                    <h3>Registering meta keys with simple string values</h3>
+                                    <p>Theme allow to register meta keys - after this they can be selected in theme templates settings and Visual Composer elements provided by theme:<br>
+                                        <img alt="" src="images/meta-fields.png">
+                                    </p>                                                                        
+                                </div>
+
+                                <div id="vc-overview">
+                                    <h3>Visual Composer elements with static content</h3>
+                                    <p>Visual Composer elements can be found in AZEXO tab:</p>
+                                    <ol>
+                                        <li><b>AZEXO - Generic Content</b> universal static content element with HTML structure similar to post/product templates used in theme. CSS styles controlled by class entered in element settings.</li>
+                                        <li><b>AZEXO - Carousel</b> wrapper for "AZEXO - Generic Content" elements</li>
+                                        <li><b>AZEXO - Panel</b> wrapper for "AZEXO - Generic Content" elements</li>
+                                        <li><b>AZEXO - Filters</b> buttons for visibility control of DOM elements via jQuery selectors</li>
+                                        <li><b>AZEXO - Taxonomy</b> for output any WP taxonomy</li>
+                                        <li><b>AZEXO - Progress bar</b> replacement of native Visual Composer element with icons support</li>
+                                    </ol>
+                                </div>
+
+                                <div id="google-map-use">
+                                    <h3>How to use Google Map from AZEXO Listings plugin</h3>
+                                    <p>Google Map can be added to page via <b>[azl-google-map]</b> shortcode. This shortcode use main query to retrieve list of showed posts map.
+                                        To show full list of posts need to use "all" attribute: <b>[azl-google-map all="1"]</b>. By default this shortcode work only with "product" post type (provided by WooCommerce). 
+                                        Location of posts take from <b>latitude</b> and <b>longitude</b> meta values.<br>
+                                        <img alt="" src="images/location-meta.png">
+                                    </p>
+                                </div>
+                                
+                                <div id="google-map-styles">
+                                    <h3>How to use change Google Map styles for AZEXO Listings plugin</h3>
+                                    <p>Google Map Styles JSON can be generated on some online <a href="https://snazzymaps.com/">service</a> and entered to plugin settings:<br>
+                                        <img alt="" src="images/google-map-styles.png">
+                                    </p>
+                                </div>
+
+                                <div id="bookings-enable">
+                                    <h3>How to enable bookable product</h3>
+                                    <p>
+                                        Open product for edit and enable bookable checkbox.<br>
+                                        <img alt="" src="images/bookable.png">
+                                    </p>
+                                </div>
+
+                                <div id="vouchers-enable">
+                                    <h3>How to enable vouchers generation for product</h3>
+                                    <p>
+                                        Open product for edit and enable voucherable checkbox. After this you can optionally enter additional settings.<br>
+                                        <img alt="" src="images/voucherable.png">
+                                        Vouchers will be generated as code-string after order payment and showed as order item meta data (on all order view pages) of appropriate product.
+                                    </p>
+                                </div>
+
+                                <div id="vouchers-redeem">
+                                    <h3>How to add vouchers redeem form</h3>
+                                    <p>Vouchers redeem form can be added to page via <b>[azv-voucher-check]</b> shortcode.
+                                    </p>                                    
+                                </div>
+                                
+                                <div id="group-buying-enable">
+                                    <h3>How to enable group buying feature for product</h3>
+                                    <p>
+                                        Open product for edit and enter any minimum sales number of "Group Buying" settings tab.<br>
+                                        <img alt="" src="images/minimum-sales.png">
+                                        After this set sale price and sale dates interval.<br>
+                                        <img alt="" src="images/sale.png">                                        
+                                    </p>                                    
+                                    <p>
+                                        Use reports provided by plugin to make manual refunds for failed deals.<br>
+                                        <img alt="" src="images/group-buying-reports.png">
+                                    </p>                                    
+                                </div>
+
+                                <div id="group-buying-field">
+                                    <h3>How to add "sales left" to product</h3>
+                                    <p>This field can be added somewhere in the product template:<br>
+                                        <img alt="" src="images/deal-purchases-left.png">
+                                    </p>                                                                                                            
+                                    <p>or via <b>AZEXO - Post field</b> Visual Composer element (in footer, header or sidebar "VC Widgets"):<br>
+                                        <img alt="" src="images/deal-purchases-left-vc.png">
+                                    </p>                                                                                                            
+                                </div>
+
+                                <div id="subscriptions-enable">
+                                    <h3>How to enable auto-hiding based on post authors subscriptions plans</h3>
+                                    <p>In case when "Subscriptions post type" dropdown not equal to "None" - all post will be hided automatically based on post authors subscriptions plans:<br>
+                                        <img alt="" src="images/subscriptions.png">
+                                    </p>                                                                                                            
+                                </div>
+                                
+                                <div id="subscriptions-limit">
+                                    <h3>Set published posts number limit (per author) for subscription plan</h3>
+                                    <p>With "YITH Subscriptions" plugin it can be configured by adding <b>Listing limit</b> meta value to subscription product:<br>
+                                        <img alt="" src="images/subscription-limit.png">
+                                    </p>
+                                </div>
+                                
+                                <div id="wc-vendors-use">
+                                    <h3>How to use WC Vendors plugin</h3>
+                                    <p>This plugin create "vendor" role. User who have vendor role have access to plugin shortcodes. 
+                                        All WooCommerce products which have author with "vendor" role automatically make commission record in DataBase after order is paid.
+                                        Site administrator have interface to pay commissions to all vendors.
+                                        See more info in plugin online <a href="https://www.wcvendors.com/kb/">KnowledgeBase</a></p>
+                                </div>
+
+                                <div id="query-form-edit">
+                                    <h3>How to edit/create Search/Filtering forms</h3>
+                                    <p>Interface to configure forms placed on "Query forms" admin page, form builder can be opened by clicking on the "Open form editor" button:<br>
+                                        <img alt="" src="images/query-forms.png">
+                                    </p>
+                                    <p>Query form can be added to page or "VC Widget" by this shortcode <b>[azqf-form name="filter"]</b>. Where "name" attribute must equal to "Form name" entered in form settings.</p>
+                                    <p>Form editor can be disabled to edit form via JSON by adding this CSS to admin section (for example with <a href="https://ru.wordpress.org/plugins/add-admin-css">Add Admin CSS</a> plugin):
+<code>#forms_repeat .cmb-type-textarea-code .cmb-td pre {
+    display: block !important;
+}
+#forms_repeat .cmb-type-textarea-code .cmb-td textarea {
+    display: block !important;
+}
+#forms_repeat .open-form-editor {
+    display: none !important;
+}</code></p>
+                                </div>
+
+                                <div id="submission-form-edit">
+                                    <h3>How to edit/create Front-end submission forms</h3>
+                                    <p>Interface to configure forms placed on "Listings" admin page, form builder can be opened by clicking on the "Open form editor" button:<br>
+                                        <img alt="" src="images/listings.png">
+                                    </p>
+                                    <p>Front-end submission form can be added to page or "VC Widget" by this shortcode <b>[azl-frontend-submission name="tour"]</b>. Where "name" attribute must equal to "Form name" entered in form settings.</p>
+                                    <p>Form editor can be disabled to edit form via JSON by adding this CSS to admin section (for example with <a href="https://ru.wordpress.org/plugins/add-admin-css">Add Admin CSS</a> plugin):
+<code>#forms_repeat .cmb-type-textarea-code .cmb-td pre {
+    display: block !important;
+}
+#forms_repeat .cmb-type-textarea-code .cmb-td textarea {
+    display: block !important;
+}
+#forms_repeat .open-form-editor {
+    display: none !important;
+}</code></p>
+                                </div>                                
+                                
+                                <div id="submission-form-status">
+                                    <h3>How to set status of post after form submission</h3>
+                                    <p>By default submitted post have "pending" status. Page of this post will return 404 (Not Found) HTTP error. It must be approved by site administrator to make it published.</p>
+                                    <p>Use "post_status" attribute to set status of post after submission <b>[azl-frontend-submission name="tour" post_status="publish"]</b></p>
+                                </div>  
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="footer-wrapper">
+                    <div id="footer-container" class="container">
+                        <div id="copyright">Copyright @ AZEXO</div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="js/jquery.js"></script>
+            <script src="js/jqueryui.js"></script>
+            <script>
+                $('body').on('click', '#to_top, a[href="#top"]', function() {
+                    $('body,html').stop().animate({
+                        scrollTop: 0
+                    }, 800, 'easeOutQuad')
+                    return false;
+                });
+
+                $('a.sp_l').click(function() {
+                    $('html, body').animate({
+                        scrollTop: $($.attr(this, 'href')).offset().top - 30
+                    }, 800);
+                    return false;
+                });
+
+                $(function() {
+                    $("#tab-docs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+                    $("#rd-tabs li").removeClass("ui-corner-top").addClass("ui-corner-left");
+
+                    $('img').click(function() {
+                        $href = $(this).attr('src');
+                        window.open($href);
+                    });
+
+                    $('ul#rd-tabs li').on('click', function(e) {
+                        e.preventDefault();
+                        window.location.hash = jQuery(this).find('a').attr('href');
+                    });
+
+
+                    $('.to_other_ctn').on('click', function(e) {
+                        e.preventDefault();
+                        window.location.hash = jQuery(this).find('a').attr('href');
+                    });
+
+
+                    var $old_clicked = null;
+                    var data_url = "";
+
+
+                });
+
+            </script>
+
+        </div>
+    </body>
+</html>

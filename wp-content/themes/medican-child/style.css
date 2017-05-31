@@ -1641,7 +1641,7 @@ border-color: #1abc9c;
 {
 right: 1px !important;
 height: 38px !important;
-width: 125px !important;
+width: 40px !important;
 background-color: transparent !important;
 z-index: 99;
 text-align: left;
@@ -1663,7 +1663,7 @@ float: left;
 width: 100%;
 }
 .filter .geo-location .location > input {
-padding-right: 125px !important;
+padding-right: 45px !important;
 }
 .filter .customclasssubmit {
 background: #f7b733 none repeat scroll 0 0 !important;
@@ -2234,7 +2234,7 @@ width: 100%;
 }
 .timemenu ul li input {
 cursor: pointer;
-height: 30px;
+height: 10px;
 width: 60px;
 }
 .timemenu span {
@@ -2615,7 +2615,7 @@ margin-top: 31px;
 border-top: 1px solid #eceef8;
 }
 .inputdatepickernotification {
-color: red;
+color: red;float: left;
 }
 .inputcustomdatepicker {
 float: left;
@@ -2670,7 +2670,7 @@ width: 100%;
 .customtabright .azl-location .entry-data .entry-footer {
     background: #f4f5fb none repeat scroll 0 0;
     font-size: 14px;
-    padding: 10px 10px;
+    padding: 10px 0px;
     text-align: right;
 }
 .customtabright .azl-location .entry-data .entry-header {
@@ -3332,4 +3332,7 @@ width: 33px;
 	border-color: #fc4a1a transparent transparent transparent;
     bottom: -6px;
     left: 48%;
+}
+#inputorder .ui-autocomplete-input.required_error {
+    height: 43px;
 }

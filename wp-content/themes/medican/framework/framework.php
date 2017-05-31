@@ -322,7 +322,7 @@ function azexo_styles() {
             'subset' => 'latin,latin-ext',
         );
         $fonts_url = add_query_arg($query_args, (is_ssl() ? 'https' : 'http') . '://fonts.googleapis.com/css');
-        wp_enqueue_style('azexo-fonts', $fonts_url, array(), null);
+        //wp_enqueue_style('azexo-fonts', $fonts_url, array(), null);
     }
 
     wp_enqueue_style('azexo-style', get_stylesheet_uri(), array('azexo'));

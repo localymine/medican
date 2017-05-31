@@ -110,7 +110,7 @@ get_header('shop');
             
          </div> 
 <div class="productleftbar">
-    <form  id='orderupload' method="post" action="">
+    <form  id='orderupload' method="post" action="" autocomplete="off">
 
         <label for="order_photo" class='imagelabel hvr-icon-pulse'>
            Upload*
@@ -252,7 +252,7 @@ get_header('shop');
     
     <!--seconforder process-->
     <div class="productrightbar" style="display:none">
-    <form  id='inputorder' method="post" action="">
+    <form  id='inputorder' method="post" action="" autocomplete="off">
      
     <div class="copy_html">
        <div class='newbottomli commonorder'>
@@ -425,11 +425,13 @@ function validatecalender()
   var x = document.forms["datepickerform"]["time"].value;
     if (x == "") {
         jQuery('.datepickernotification').html('Please select the Time.');
+        jQuery('.requiredfield_error').css('display','block');
         return false;
     }
     else
     {
-    jQuery('.customdatepicker').css('border','none');     
+    jQuery('.customdatepicker').removeClass('required_error');   
+    jQuery('.requiredfield_error').css('display','none');
     var visible = jQuery("#datepicker").datepicker("widget").is(":visible");
     jQuery("#datepicker").datepicker(visible ? "hide" : "show");
     jQuery('.datepickernotification').html('');
@@ -444,6 +446,15 @@ function validatecalender()
     }
 
  }
+ 
+ 
+ if(jQuery("#orderupload div.required_error").length>0){
+    	jQuery('.requiredfield_error').css('display','block');
+    }
+    else{
+    	jQuery('.requiredfield_error').css('display','none');
+    }
+ 
 }
 jQuery(document).ready(function($)
 { 
@@ -509,7 +520,7 @@ $(document).unbind('mousedown', $.datepicker._checkExternalClick);
 $(".overlay").bind('mousedown', $.datepicker._checkExternalClick);
 
 var appendsomething = function () {
-$("#ui-datepicker-div").append("<div class='timediv'><h2 class='time'>Time:</h2><div class='timemenu'><form name='datepickerform' method='post' action='' class='datepickerform' id='datepickerform'><ul><li><input type='radio' value='morning' name='time'><span>morning</span></li><li><input type='radio' value='noon' name='time'><span>noon</span></li><li><input type='radio' value='evening' name='time'><span>evening</span></li><li><input type='radio' value='night' name='time'><span>night</span></li></ul><input type='button'  onclick='validatecalender();' class='allbutton dataajax' value='Select'><span class='datepickernotification'></span></form></div></div>");
+$("#ui-datepicker-div").append("<div class='timediv'><h2 class='time'>Time:</h2><div class='timemenu'><form name='datepickerform' method='post' action='' class='datepickerform' id='datepickerform'><ul><li><input type='radio' value='morning' name='time' onclick='removeValidation();'><span>morning</span></li><li><input type='radio' value='noon' name='time' onclick='removeValidation();'><span>noon</span></li><li><input type='radio' value='evening' name='time' onclick='removeValidation();'><span>evening</span></li><li><input type='radio' value='night' name='time' onclick='removeValidation();'><span>night</span></li></ul><input type='button'  onclick='validatecalender();' class='allbutton dataajax' value='Select'><span class='datepickernotification'></span></form></div></div>");
 $("#ui-datepicker-div").prepend('<div class="topheading"><h2>Date:</h2></div>');
 }
 $(document).on('click', '.ui-datepicker-next', function () {
@@ -738,9 +749,10 @@ function checklist(current_selectid,remove_id,remove_title,type,onchnageid)
 <script>
     function readURL(input) {
         var ext = jQuery('#order_photo').val().split('.').pop().toLowerCase();
+        if(ext!=""){
             if(jQuery.inArray(ext, ['gif','png','jpg','jpeg']) == -1) {
             jQuery('.orderimageerror').html('Upload Photo File only.'); 
-            jQuery('.imagelabel').css('border','3px solid red');
+            jQuery('.imagelabel').addClass('required_error');
 			var appandpicker = jQuery('#datepicker').val()
 				if ((!jQuery('.newselectlist div').hasClass("required_error")) && appandpicker!='') {
 				jQuery('.requiredfield_error').css('display','none'); 
@@ -749,23 +761,31 @@ function checklist(current_selectid,remove_id,remove_title,type,onchnageid)
             else
             {
             jQuery('.orderimageerror').html(''); 
-            jQuery('.imagelabel').css('border','1px solid #dcdff1');
+            jQuery('.imagelabel').removeClass('required_error');
             }
-     if (input.files && input.files[0]) {
-         var reader = new FileReader();
-
-         reader.onload = function (e) {
-             jQuery('#blah').css('display','block');
-             jQuery('#blah')
-                 .attr('src', e.target.result)
-                 .width(150)
-                 .height(200);
+             if (input.files && input.files[0]) {
+                 var reader = new FileReader();
         
-         };
-
-         reader.readAsDataURL(input.files[0]);
+                 reader.onload = function (e) {
+                     jQuery('#blah').css('display','block');
+                     jQuery('#blah')
+                         .attr('src', e.target.result)
+                         .width(150)
+                         .height(200);
+                
+                 };
         
-     }
+                 reader.readAsDataURL(input.files[0]);
+                
+             }
+        }
+     
+ 	if(jQuery("#orderupload .required_error").length>0){
+		jQuery('.requiredfield_error').css('display','block');
+	}
+	else{
+		jQuery('.requiredfield_error').css('display','none');
+	}
  }
 
    jQuery('#orderupload .inner_proclass select[name^="productid[]"]').live('change', (function () {
@@ -799,12 +819,12 @@ function checklist(current_selectid,remove_id,remove_title,type,onchnageid)
 			   }*/
             }
 			
-			/*if(jQuery("#orderupload .copy_html div.required_error").length>0){
+			if(jQuery("#orderupload .required_error").length>0){
 				jQuery('.requiredfield_error').css('display','block');
 			}
 			else{
 				jQuery('.requiredfield_error').css('display','none');
-			}*/
+			}
     });
 jQuery("#inputorder").on('change','select',function () { 
         if(jQuery(this).val() == '') {
@@ -828,12 +848,12 @@ jQuery("#inputorder").on('change','select',function () {
 			   }*/
             }
 			
-			/*if(jQuery("#inputorder .copy_html div.required_error").length>0){
+			if(jQuery("#inputorder .required_error").length>0){
 				jQuery('.inputrequiredfield_error').css('display','block');
 			}
 			else{
 				jQuery('.inputrequiredfield_error').css('display','none');
-			}*/
+			}
     });
     
 jQuery('#inputorder').on('change', 'input:text', function () {
@@ -847,14 +867,21 @@ if(jQuery(this).val() == '') {
       jQuery('#'+jQuery(this).attr('id')).removeClass('required_error');
 	   var appandpicker = jQuery('#inputdatepicker').val();
 	  
-	   /*if((jQuery('.inputnewselectlist div').hasClass("required_error"))|| appandpicker == '')
+	   if((jQuery('.inputnewselectlist div').hasClass("required_error"))|| appandpicker == '')
 	   {
 			jQuery('.inputrequiredfield_error').css('display','block');
 	   }
 	   else{
 			jQuery('.inputrequiredfield_error').css('display','none');
-	   }*/
+	   }
     }
+    
+    if(jQuery("#inputorder .required_error").length>0){
+		jQuery('.inputrequiredfield_error').css('display','block');
+	}
+	else{
+		jQuery('.inputrequiredfield_error').css('display','none');
+	}
 });    
   
 
@@ -890,18 +917,18 @@ if(jQuery(this).val() == '') {
 		var checkcalendar = jQuery('div.deliverydeatails').html();
         if(checkcalendar == '')
         {
-          jQuery('.customdatepicker').css('border','3px solid red');  
+          jQuery('.customdatepicker').addClass('required_error');  
           errorFlag = true;
         }
         else
         {
-         jQuery('.customdatepicker').css('border','none');    
+         jQuery('.customdatepicker').removeClass('required_error');     
         }
 		
         var ext = jQuery('#order_photo').val().split('.').pop().toLowerCase();
 		
 			if(ext==''){
-				 jQuery('.imagelabel').css('border','3px solid red');
+				 jQuery('.imagelabel').addClass('required_error');
 				 errorFlag = true;
 			}
 //        set flag error message
@@ -916,7 +943,7 @@ if(jQuery(this).val() == '') {
 			{
 				if(jQuery.inArray(ext, ['gif','png','jpg','jpeg']) == -1) {
 					jQuery('.orderimageerror').html('Upload Photo File only.'); 
-					jQuery('.imagelabel').css('border','3px solid red');
+					jQuery('.imagelabel').addClass('required_error');
 					
 		        }
 				else{
@@ -988,7 +1015,14 @@ jQuery.ajax({
 <script src="<?php echo get_stylesheet_directory_uri().'/js/jquery-ui.js'?>" ></script>
 
 <script>
-    
+function removeValidation(){
+    if(jQuery(".datepickernotification").length>0)
+        jQuery(".datepickernotification").css("display","none");
+        
+    if(jQuery(".inputdatepickernotification").length>0)
+        jQuery(".inputdatepickernotification").css("display","none");
+}
+  
 function newvalidatecalender()
 {
 	 var appandpicker = jQuery('#inputdatepicker').val();
@@ -999,14 +1033,17 @@ function newvalidatecalender()
 	   else{
 			jQuery('.inputrequiredfield_error').css('display','none');
 	   }
+	    
    var x = document.forms["inputdatepickerform"]["time"].value;
    if (x == "") {
         jQuery('.inputdatepickernotification').html('Please select the Time.');
+        jQuery('.inputrequiredfield_error').css('display','block');
         return false;
     }
     else
     {
-    jQuery('.inputcustomdatepicker').css('border','none'); 
+    jQuery('.inputcustomdatepicker').removeClass('required_error'); 
+    jQuery('.inputrequiredfield_error').css('display','none');
     var visible = jQuery("#inputdatepicker").datepicker("widget").is(":visible");
     jQuery("#inputdatepicker").datepicker(visible ? "hide" : "show");
     jQuery('.inputdatepickernotification').html('');
@@ -1019,6 +1056,16 @@ function newvalidatecalender()
      jQuery('#inputorder .ui-datepicker-trigger').addClass('inputnewimageclass');
     }
  }
+ 
+ 
+ if(jQuery("#inputorder div.required_error").length>0){
+				jQuery('.inputrequiredfield_error').css('display','block');
+			}
+			else{
+				jQuery('.inputrequiredfield_error').css('display','none');
+			}
+ 
+ 
 }    
 jQuery(document).ready(function () {
       jQuery('#inputorderloginbutton, #orderloginbutton').click(function()
@@ -1158,7 +1205,7 @@ beforeShow: function () {
 });
 jQuery( "#inputdatepicker" ).datepicker('setDate', 'today');
 var appendsomething = function () {
-jQuery("#ui-datepicker-div").append("<div class='timediv'><h2 class='time'>Time:</h2><div class='timemenu'><form name='inputdatepickerform' method='post' action='' class='datepickerform' id='datepickerform'><ul><li><input type='radio' value='morning' name='time'><span>morning</span></li><li><input type='radio' value='noon' name='time'><span>noon</span></li><li><input type='radio' value='evening' name='time'><span>evening</span></li><li><input type='radio' value='night' name='time'><span>night</span></li></ul><input type='button'  onclick='newvalidatecalender();' class='allbutton dataajax' value='Select'><span class='inputdatepickernotification'></span></form></div></div>");
+jQuery("#ui-datepicker-div").append("<div class='timediv'><h2 class='time'>Time:</h2><div class='timemenu'><form name='inputdatepickerform' method='post' action='' class='datepickerform' id='datepickerform'><ul><li><input type='radio' value='morning' name='time' onclick='removeValidation();'><span>morning</span></li><li><input type='radio' value='noon' name='time' onclick='removeValidation();'><span>noon</span></li><li><input type='radio' value='evening' name='time' onclick='removeValidation();'><span>evening</span></li><li><input type='radio' value='night' name='time' onclick='removeValidation();'><span>night</span></li></ul><input type='button'  onclick='newvalidatecalender();' class='allbutton dataajax' value='Select'><span class='inputdatepickernotification'></span></form></div></div>");
 jQuery("#ui-datepicker-div").prepend('<div class="topheading"><h2>Date:</h2></div>');
 }
 
@@ -1201,12 +1248,12 @@ jQuery('#inputorder').submit(function()
 	 var checkcalendar = jQuery('div.inputdeliverydeatails').val();
      if(checkcalendar == '')
      {
-       jQuery('.inputcustomdatepicker').css('border','3px solid red');  
+       jQuery('.inputcustomdatepicker').addClass('required_error');  
        errorFlag = true;
      }
      else
      {
-      jQuery('.inputcustomdatepicker').css('border','none');    
+      jQuery('.inputcustomdatepicker').removeClass('required_error');    
      }
 	 
      if(errorFlag == true) {

@@ -511,7 +511,6 @@
 	        	// Loading Styles
 				var styles = [
 					"<?php echo esc_url(includes_url( 'css/dashicons.min.css' , __FILE__ )); ?>",
-					"<?php $prtcl = is_ssl() ? 'https' : 'http'; echo $prtcl; ?>://fonts.googleapis.com/css?family=Open+Sans:400,300,600&subset=latin,latin-ext",
 					"<?php echo esc_url(plugins_url( 'css/contextmenu.css?ver='.YP_VERSION.'' , __FILE__ )); ?>",
 					"<?php echo esc_url(plugins_url( 'css/nouislider.css?ver='.YP_VERSION.'' , __FILE__ )); ?>",
 					"<?php echo esc_url(plugins_url( 'css/iris.css?ver='.YP_VERSION.'' , __FILE__ )); ?>",
