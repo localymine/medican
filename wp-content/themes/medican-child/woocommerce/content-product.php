@@ -61,6 +61,7 @@ azexo_add_image_size($thumbnail_size);
 $image_thumbnail = isset($options[$product_template . '_image_thumbnail']) ? $options[$product_template . '_image_thumbnail'] : false;
 
 $images_links = azexo_woo_get_images_links($thumbnail_size);
+$count= isset($count)? $count: 1;
 ?>
 <<?php print $azexo_woo_base_tag; ?> <?php post_class(array(str_replace('_', '-', $product_template))); ?>>
 <div class="entry" itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>">
@@ -118,6 +119,7 @@ $images_links = azexo_woo_get_images_links($thumbnail_size);
     if ($single) {
         do_action('woocommerce_before_single_product_summary');
     }
+    
     ?>
   <div class="outerentry-data">
    <div class="outerentry-data-inner">

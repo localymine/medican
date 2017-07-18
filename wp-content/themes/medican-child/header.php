@@ -68,7 +68,6 @@
 
         <!--zscript async defer  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxfncg-b5W3Sd9VdRCvtmS3VeQcDAb05g"></script-->
 
-        
 
     </head>
 
@@ -511,6 +510,7 @@ jQuery('.Location h3').click(function()
 
   jQuery('.piclocation').css('visibility','unset'); 
 	jQuery('.piclocation .controls').css('display','block');
+		jQuery('.piclocation .azl-map .gm-style').css('display','block');
 	
    jQuery('.overlay').css('display','block');
    jQuery(".site-header .header-main").css('z-index','1');
@@ -525,6 +525,7 @@ jQuery('.crossimage').click(function()
 
   jQuery('.piclocation').css('visibility','hidden'); 
   jQuery('.piclocation .controls').css('display','none');
+  jQuery('.piclocation .azl-map .gm-style').css('display','none');
 
    jQuery('.overlay').css('display','none');
    jQuery(".site-header .header-main").css('z-index','5');
@@ -619,18 +620,21 @@ if ( is_user_logged_in() ) {
 
 ?>
 
-    
+ 
 
 function homesearchfrom1()
 
 {
-
     
+    if(jQuery("#customradiusclass").val()==""){
+        jQuery("#customradiusclass").val('5')
+    }
+       
     if(!jQuery("#mylocationsearch").val())
-
     {
 
          jQuery(".newcustomclasssubmit").trigger('click');
+		 
 
     }
 
@@ -655,6 +659,7 @@ function homesearchfrom()
 { 
   var locationvalue  =  jQuery('#mylocationsearch').val();
 if ((jQuery.browser.safari)) {
+
                    //If required attribute is not supported or browser is Safari (Safari thinks that it has this attribute, but it does not work), then check all fields that has required attribute
                    jQuery("#customazqfform [required]").each(function(index) {
                          if (!jQuery(this).val()) {
@@ -669,9 +674,7 @@ if ((jQuery.browser.safari)) {
                    });
             }
   
-  
-  
-  
+
   
   
   
@@ -689,7 +692,7 @@ if ((jQuery.browser.safari)) {
 
     
 
-    document.getElementById("customradiusclass").defaultValue = "05";
+    //document.getElementById("customradiusclass").defaultValue = "05";
 
     var x;
 
@@ -706,16 +709,26 @@ if ((jQuery.browser.safari)) {
 }
 
 function checklogin()
-
 {
-
 	jQuery('.not_login_message').hide();
-
         jQuery('#page').show(); 
-
 }
-
-
-
+jQuery(document).ready(function(){
+jQuery("#customradiusclass").keypress(function(event){
+var customradiusclass = document.getElementById("customradiusclass");
+//comparing pressed keycodes
+if(event.which==8) return true;
+if(event.which==46) return false;
+if(event.which<=186 && event.which>=191) return false;
+if (!(event.which==9 || event.which==46)&&(event.which < 48 || event.which > 57)&&(event.which<186 || event.which<191 ))
+{
+return false;
+}
+else
+{
+//Condition to check textbox contains ten numbers or not
+}
+});
+});
 </script>
 

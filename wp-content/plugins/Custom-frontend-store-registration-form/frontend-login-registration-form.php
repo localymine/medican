@@ -282,11 +282,11 @@ function storeajax()
                             },
                             storeupload: {
                             required: true,
-                            extension: "jpg|jpeg|png|gif",
+                           // extension: "jpg|jpeg|png|gif",
                               },
                            StoreLicense: {
                             required: true, 
-                            extension: "jpg|jpeg|png|gif",
+                           // extension: "jpg|jpeg|png|gif",
                               },     
                            select_Provine: {
                              required: true 
@@ -305,12 +305,12 @@ function storeajax()
                                     },
                            },
                           messages: {
-                                  storeupload:{
-                                    extension: ""
-                                },  
-                                StoreLicense:{
-                                    extension: ""
-                                },  
+                            //      storeupload:{
+                             //       extension: ""
+                             //   },  
+                              //  StoreLicense:{
+                              //      extension: ""
+                              //  },  
 
                              },    
                                     

@@ -425,7 +425,7 @@ function validatecalender()
   var x = document.forms["datepickerform"]["time"].value;
     if (x == "") {
         jQuery('.datepickernotification').html('Please select the Time.');
-        jQuery('.requiredfield_error').css('display','block');
+        //jQuery('.requiredfield_error').css('display','block');
         return false;
     }
     else
@@ -448,7 +448,7 @@ function validatecalender()
  }
  
  
- if(jQuery("#orderupload div.required_error").length>0){
+ if(jQuery("#orderupload .required_error").length>0){
     	jQuery('.requiredfield_error').css('display','block');
     }
     else{
@@ -459,7 +459,9 @@ function validatecalender()
 jQuery(document).ready(function($)
 { 
 
-	
+jQuery(".permisstion span.orderradio u.text-click").click(function(){
+   jQuery(this).closest('span').prev('input').trigger('click');
+});
 
 
 $('#ui-datepicker-div').css('visibility','block');
@@ -818,8 +820,8 @@ function checklist(current_selectid,remove_id,remove_title,type,onchnageid)
 				    jQuery('.requiredfield_error').css('display','none');
 			   }*/
             }
-			
-			if(jQuery("#orderupload .required_error").length>0){
+			console.log(jQuery("#orderupload .required_error").length);
+			if((jQuery("#orderupload .required_error").length>0) && (jQuery(".submit_uploadorder_clicked").length>0)){
 				jQuery('.requiredfield_error').css('display','block');
 			}
 			else{
@@ -848,7 +850,7 @@ jQuery("#inputorder").on('change','select',function () {
 			   }*/
             }
 			
-			if(jQuery("#inputorder .required_error").length>0){
+			if((jQuery("#inputorder .required_error").length>0) && (jQuery(".submit_iputorder_clicked").length>0)){
 				jQuery('.inputrequiredfield_error').css('display','block');
 			}
 			else{
@@ -876,7 +878,7 @@ if(jQuery(this).val() == '') {
 	   }
     }
     
-    if(jQuery("#inputorder .required_error").length>0){
+    if((jQuery("#inputorder .required_error").length>0) && (jQuery(".submit_iputorder_clicked").length>0)){
 		jQuery('.inputrequiredfield_error').css('display','block');
 	}
 	else{
@@ -890,6 +892,9 @@ if(jQuery(this).val() == '') {
 
     jQuery('#orderupload').submit(function()
     {
+      if(!jQuery('.submit_uploadorder_clicked').length>0)
+        jQuery('body').prepend('<div class="submit_uploadorder_clicked"></div>');
+      
       var fromid = jQuery(this).attr('id');
       var errorFlag = false;
         jQuery('#orderupload select').each(function () {           
@@ -947,6 +952,7 @@ if(jQuery(this).val() == '') {
 					
 		        }
 				else{
+				    jQuery(".submit_uploadorder_clicked").remove();
 					ordercreateajax(fromid);
 				}
 			}
@@ -1037,7 +1043,7 @@ function newvalidatecalender()
    var x = document.forms["inputdatepickerform"]["time"].value;
    if (x == "") {
         jQuery('.inputdatepickernotification').html('Please select the Time.');
-        jQuery('.inputrequiredfield_error').css('display','block');
+        //jQuery('.inputrequiredfield_error').css('display','block');
         return false;
     }
     else
@@ -1058,7 +1064,7 @@ function newvalidatecalender()
  }
  
  
- if(jQuery("#inputorder div.required_error").length>0){
+ if(jQuery("#inputorder .required_error").length>0){
 				jQuery('.inputrequiredfield_error').css('display','block');
 			}
 			else{
@@ -1211,6 +1217,9 @@ jQuery("#ui-datepicker-div").prepend('<div class="topheading"><h2>Date:</h2></di
 
 jQuery('#inputorder').submit(function()
  {
+   if(!jQuery(".submit_iputorder_clicked").length>0)
+        jQuery("body").prepend("<div class='submit_iputorder_clicked'></div>");
+        
    var fromid = jQuery(this).attr('id');
     var errorFlag = false;
      jQuery('#inputorder select').each(function () {           
@@ -1262,7 +1271,9 @@ jQuery('#inputorder').submit(function()
      }
     else
     {
-       jQuery('.inputrequiredfield_error').css('display','none');  
+       jQuery('.inputrequiredfield_error').css('display','none');
+       jQuery('.submit_iputorder_clicked').remove();
+       
        ordercreateajax(fromid);
        return false;
     }

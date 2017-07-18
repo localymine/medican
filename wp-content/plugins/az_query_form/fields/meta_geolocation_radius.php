@@ -52,7 +52,10 @@ function azqf_geolocation_render($output, $field) {
 add_action('azqf_geolocation_process', 'azqf_geolocation_process', 10, 2);
 
 function azqf_geolocation_process($query, $field) {
-    $orderbyname =  $query->query['orderby'];
+    $orderbyname = "";
+    if(isset($query->query['orderby']))
+        $orderbyname =  $query->query['orderby'];
+        
     $use_radius = isset($_GET['use_radius']) && 'on' == $_GET['use_radius'];
     $lat = isset($_GET[$field['lat_meta_key']]) ? (float) $_GET[$field['lat_meta_key']] : false;
     $lng = isset($_GET[$field['lng_meta_key']]) ? (float) $_GET[$field['lng_meta_key']] : false;

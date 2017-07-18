@@ -44,7 +44,13 @@ get_header('shop');
 
 
 <script type='text/javascript'>
+jQuery(window).load(function(){
+    //jQuery('#primary .tab_heading .tab1').trigger('click');
+});
 jQuery(document).ready(function(){
+     jQuery('#primary .tab_heading .tab2').click(function(){
+         
+     });
 jQuery('.tab2').trigger('click');
 
 //setTimeout(function() {
@@ -52,6 +58,7 @@ jQuery('.tab2').trigger('click');
 //}, 1e3);
     jQuery('.tab1').click(function()
     {
+        jQuery(".customtabright").css("padding-top","0px");
         jQuery(".customtableft").show();
         jQuery('.customtabright').hide();
         jQuery('.tab1').addClass('active');
@@ -60,7 +67,7 @@ jQuery('.tab2').trigger('click');
     jQuery('.tab2').click(function()
     {
 
-
+        jQuery(".customtabright").css("padding-top","20px");
         jQuery(".customtableft").hide();
         jQuery('.customtabright').show();
         jQuery('.customtabright').css('visibility','unset');

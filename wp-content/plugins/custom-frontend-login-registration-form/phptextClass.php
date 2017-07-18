@@ -64,9 +64,11 @@ class phptextClass
 		imagefill($im,0,0,$backgroundColor);	
 		list($x, $y) = $this->ImageTTFCenter($im, $text, $font, $fontSize);	
 		imagettftext($im, $fontSize, 0, $x, $y, $textColor, $font, $text);		
-
+        
+        ob_start();
 		imagejpeg($im,NULL,90);/* Showing image */
 		header('Content-Type: image/jpeg');/* defining the image type to be shown in browser widow */
+        ob_end_flush();
 		imagedestroy($im);/* Destroying image instance */
 		if(isset($_SESSION)){
 			$_SESSION['captcha_code'] = $text;/* set random text in session for captcha validation*/

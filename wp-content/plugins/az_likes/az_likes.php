@@ -413,6 +413,7 @@ function azpl_get_like_count($like_count) {
     } else {
         $number = 0;
     }
+    $count = "";
     if(!is_product())
     {
     $count = '<span class="sl-count">' . $number . '</span>';

@@ -267,7 +267,7 @@ function azexo_azlp_dashboard_links($links) {
             $forms = cmb2_get_option('azl_options', 'forms');
             if (is_array($forms)) {
                 foreach ($forms as $form) {
-                    if ($form['post_type'] == 'azl_profile') {
+                    if (isset($form['post_type']) && ($form['post_type'] == 'azl_profile')) {
                         if (isset($form['page']) && is_numeric($form['page'])) {
                             $edit_profile = $form['page'];
                         }
@@ -278,9 +278,9 @@ function azexo_azlp_dashboard_links($links) {
         
        
         $customerphone1  = $profile->post_author;
-        $customerphone =  get_user_meta( $customerphone1, 'user_phone', true );  
+        $customerphone =  get_user_meta( $customerphone1, 'user_phone', true );
         $userid = get_current_user_id();
-        $int = wc_get_customer_order_count( $user_id );
+        $int = wc_get_customer_order_count( $userid );
         $storepagelink =  get_permalink(1372);
         $customcaps = get_user_meta($userid, 'custom_capability', true);
         
