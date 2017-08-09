@@ -39,7 +39,7 @@ function azqf_geolocation_render($output, $field) {
     $output .= '</label>';
 
     $output .= '<div class="slider customradiousclass" id="customradiousclass">';
-    $output .= '<input id="customradiusclass" pattern="[0-10]{1}"  id ="customradiusclass" oninvalid="setCustomValidity(\'Please enter a number (1-10) only\')"  oninput="setCustomValidity(\'\')" name="radius" min="1" max="10" type="number" placeholder="Radius:(km)" value="' . (isset($_GET['radius']) ? sanitize_text_field($_GET['radius']) : '') . '">';
+    $output .= '<input id="customradiusclass" pattern="[0-10]{1}"  id ="customradiusclass"  name="radius" min="1" max="10" type="number" placeholder="Radius:(km)" value="' . (isset($_GET['radius']) ? sanitize_text_field($_GET['radius']) : '') . '">';
     $output .= '</div>';
 
     $output .= '</div>';

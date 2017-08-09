@@ -1,4 +1,0 @@
-[02-May-2017 08:20:47 UTC] PHP Fatal error:  Call to undefined function get_site_url() in /home/webnhathuoc/public_html/wp-content/themes/medican-child/woocommerce/image/index.php on line 2
-[02-May-2017 08:21:56 UTC] PHP Fatal error:  Call to undefined function get_site_url() in /home/webnhathuoc/public_html/wp-content/themes/medican-child/woocommerce/image/index.php on line 2
-[02-May-2017 08:21:58 UTC] PHP Fatal error:  Call to undefined function get_site_url() in /home/webnhathuoc/public_html/wp-content/themes/medican-child/woocommerce/image/index.php on line 2
-[02-May-2017 08:22:00 UTC] PHP Fatal error:  Call to undefined function get_site_url() in /home/webnhathuoc/public_html/wp-content/themes/medican-child/woocommerce/image/index.php on line 2
