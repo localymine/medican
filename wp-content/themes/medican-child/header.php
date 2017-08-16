@@ -652,48 +652,95 @@ function homesearchfrom1()
 
 }
 
-
+function isEmpty(e, t, n)
+{
+	var r = document.getElementById(e);
+	var n = document.getElementById(n);
+	if(r.value.replace(/\s+$/, "") == "")
+	{
+		n.style.visibility= "visible";
+		n.innerHTML = t;
+		r.value = "";
+		//r.focus();
+		return true
+	}
+	else
+	{
+		n.style.visibility= "hidden";
+		n.innerHTML = "";
+		return false
+	}
+}
 
 function homesearchfrom()
 
 { 
   var locationvalue  =  jQuery('#mylocationsearch').val();
-if ((jQuery.browser.safari)) {
-
+   var radiusval  =  jQuery('#customradiusclass').val();
+    var e = 0;
+	var f=0;
+                
+              if ((jQuery.browser.safari)) {
                    //If required attribute is not supported or browser is Safari (Safari thinks that it has this attribute, but it does not work), then check all fields that has required attribute
-                   jQuery("#customazqfform [required]").each(function(index) {
-                         if (!jQuery(this).val()) {
-							  jQuery('.location_error').css('display','block');
-                               //If at least one required value is empty, then ask to fill all required fields.
-                             exit();
-                               /* return false; */
-                         }
-						 else{
-							jQuery('.location_error').css('display','none'); 
-						 }
-                   });
+                  
+						 if(locationvalue=='')
+		{
+		jQuery('#location_error').css('display','block').delay(5000).fadeOut(400);
+		    e++
+		}
+		if(isNaN(radiusval) || radiusval < 1 || radiusval > 10)
+		{
+		 jQuery('#radius_error').css('display','block').delay(5000).fadeOut(400);
+		    e++
+		}
+		
+
+		if(e > 0)
+		{
+			exit;
+		}
+		else
+		{
+		
+			
+			return true;
+		}
+         
+				    
+			  
             }
-  
 
-  
-  
-  
-   if(locationvalue)
-  {
-     jQuery('#mylocationsearch').get(0).setCustomValidity('');
-  }
 
-    else
+  //document.getElementById("customradiusclass").defaultValue = "05";
+//-----------------------------------------------
+var e = 0;
+	var f=0;
+	
+			if(locationvalue=='')
+		{
+		jQuery('#location_error').css('display','block').delay(5000).fadeOut(400);
+		    e++
+		}
+		if(isNaN(radiusval) || radiusval < 1 || radiusval > 10)
+		{
+		 jQuery('#radius_error').css('display','block').delay(5000).fadeOut(400);
+		    e++
+		}
+		
 
-        {
+		if(e > 0)
+		{
+			exit;
+		}
+		else
+		{
+		
+			
+			return true;
+		}
 
-        jQuery('#mylocationsearch').get(0).setCustomValidity('Please input location.');
-		 }
 
-    
-
-    //document.getElementById("customradiusclass").defaultValue = "05";
-
+//----------------------------------------------
     var x;
 
     x = document.getElementById("customradiusclass").value;
@@ -704,8 +751,6 @@ if ((jQuery.browser.safari)) {
 
     }
 
-   
-
 }
 
 function checklogin()
@@ -713,6 +758,7 @@ function checklogin()
 	jQuery('.not_login_message').hide();
         jQuery('#page').show(); 
 }
+
 jQuery(document).ready(function(){
 jQuery("#customradiusclass").keypress(function(event){
 var customradiusclass = document.getElementById("customradiusclass");

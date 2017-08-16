@@ -22,7 +22,7 @@ function azqf_geolocation_render($output, $field) {
 
     $output .= '<div class="location">';
     $output .= '<input id="mylocationsearch"  required = "true" name="location" type="text" placeholder="' . (isset($field['placeholder']) ? esc_attr($field['placeholder']) : '') . '" value="' . (isset($_GET['location']) ? sanitize_text_field($_GET['location']) : '') . '">';
-	 $output .='<span class="location_error" style="display:none;"><h1>Please input location.</h1></span>';
+$output .='<span class="location_error" style="display:none;" id="location_error"><h1>Please input location.</h1></span>';
     $output .= '<input name="latitude" type="hidden" value="' . (isset($_GET[$field['lat_meta_key']]) ? sanitize_text_field($_GET[$field['lat_meta_key']]) : '') . '">';
     $output .= '<input name="longitude" type="hidden" value="' . (isset($_GET[$field['lng_meta_key']]) ? sanitize_text_field($_GET[$field['lng_meta_key']]) : '') . '">';
     $output .= '</div>';
@@ -39,7 +39,7 @@ function azqf_geolocation_render($output, $field) {
     $output .= '</label>';
 
     $output .= '<div class="slider customradiousclass" id="customradiousclass">';
-    $output .= '<input id="customradiusclass" pattern="[0-10]{1}"  id ="customradiusclass"  name="radius" min="1" max="10" type="number" placeholder="Radius:(km)" value="' . (isset($_GET['radius']) ? sanitize_text_field($_GET['radius']) : '') . '">';
+    $output .= '<input id="customradiusclass" pattern="[0-10]{1}"  id ="customradiusclass"   name="radius"  type="number" placeholder="Radius:(km)" value="' . (isset($_GET['radius']) ? sanitize_text_field($_GET['radius']) : '') . '"><span class="radius_error location_error" style="display:none;" id="radius_error"><h1>Please enter a number (1-10) only.</h1></span>';
     $output .= '</div>';
 
     $output .= '</div>';

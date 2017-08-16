@@ -40,7 +40,7 @@ border: 3px solid #c1c1c1;
 }*/
 .entry-thumbnail {
 	background-color: #E6E6E6;
-	border: 5px solid #f4f5fb;
+	/*border: 5px solid #f4f5fb;*/
 	border-radius: 100%;
 	color: #3f51b5;
 	display: inline-block;
@@ -2732,17 +2732,19 @@ button {
 	background-size: 100% 100% !important;
 }
 .customtabright .azl-map .entry-thumbnail {
-	left: -5px;
+	/*left: -5px;*/
 	height: 210px;
 }
 .customtabright .azl-location .entry-thumbnail .entry-title {
-	bottom: -35px;
-	left: 0px;
-	position: absolute;
-	background: #fff;
-	width: 100%;
-	height: 60px;
-	margin: 0px;
+    background: #fff none repeat scroll 0 0;
+    bottom: -0px;
+    height: 40px;
+    left: 0;
+    line-height: 31px;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 9;
 }
 .customtabright .azl-location .entry-title > a {
 	color: #000;
@@ -2998,10 +3000,10 @@ label[for="StoreLicense"], label[for="store_upload"] {
 .search-no-results #primary #content .woocommerce-info {
 	text-align: center;
 }
-.azl-map .entry-thumbnail {
+/*.azl-map .entry-thumbnail {
 	top: -5px;
 }
-.search .outerentry-data .entry-header .custom_metafield li::before {
+*/.search .outerentry-data .entry-header .custom_metafield li::before {
 	left: 4px;
 	position: absolute;
 	top: 4px;
@@ -3125,6 +3127,27 @@ label[for="StoreLicense"], label[for="store_upload"] {
 	top: 5px;
 	width: 33px;
 }
+/*.geo-location .location_error {
+	position: relative;
+	padding: 0px;
+	background: white;
+	color: black;
+	top: 0;
+}*/
+
+ .geo-location .radius_error {
+
+position: absolute;
+padding: 12px;
+background: white;
+color: black;
+top: 4em;
+right: 0;
+width:238px;
+left:1px;
+
+}  
+
 .geo-location .location_error {
 	position: absolute;
 	padding: 12px;
@@ -3132,13 +3155,57 @@ label[for="StoreLicense"], label[for="store_upload"] {
 	color: black;
 	top: 4em;
 }
+/*.geo-location input[type="number"]::-ms-clear {
+    display: none;
+}
+input::-ms-clear {
+    display: none;
+}
+*/
+.active-sidebar .geo-location .location_error {
+position: absolute;
+padding: 10px 10px;
+background: white;
+top: 50px;
+border: 1px solid #ccc;
+z-index: 9;
+box-shadow: 0 0 5px #ccc;
+}
+.active-sidebar .geo-location .location_error::after {
+    content: "";
+    position: absolute;
+    top: -21px;
+left: 56px;
+   /* margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+	border-color: transparent  transparent #555 transparent;*/
+	background:url(images/arrow-main.png);
+	width:29px;
+	height:11px;
+	background-repeat:no-repeat;
+    
+}
+
 .geo-location .location_error::after {
 	border-color: rgba(194, 225, 245, 0) rgba(194, 225, 245, 0) #FFF;
 	border-bottom-color: #FFF !important;
 	border-width: 10px !important;
 	margin-left: -4em;
 }
-.geo-location .location_error::after, .geo-location .location_error::before {
+
+ .geo-location .location_error::after, .geo-location .location_error::before {
+bottom: 100%;
+left: 80px;
+border: solid transparent;
+content: " ";
+height: 0;
+width: 0;
+position: absolute;
+pointer-events: none;
+} 
+
+/*.geo-location .location_error::after, .geo-location .location_error::before {
 	bottom: 100%;
 	left: 50%;
 	border: solid transparent;
@@ -3147,9 +3214,14 @@ label[for="StoreLicense"], label[for="store_upload"] {
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-}
+}*/
 .geo-location .location_error h1 {
 	font-size: 12px;
+	text-align:left !important;
+}
+.geo-location .radius_error h1 {
+	font-size: 12px;
+	text-align:left !important;
 }
 .footerweb p {
 	font-size: 14px;
@@ -3261,3 +3333,7 @@ label[for="StoreLicense"], label[for="store_upload"] {
     width: auto;
 	clear: both;
 }*/
+.infobox-wrapper .entry.azl-location .entry-thumbnail
+{
+	float:left;
+}

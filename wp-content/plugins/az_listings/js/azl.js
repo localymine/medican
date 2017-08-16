@@ -148,7 +148,7 @@
                                 function infobox_create_open(m, callback) {
                                     function infobox_create() {
                                         var boxText = document.createElement("div");
-                                        boxText.innerHTML = Mustache.render(azl.infoboxTemplate, azl.locations[m.post_id]);
+                                        boxText.innerHTML = Mustache.render(azl.infoboxTemplate, azl.locations[m.post_id]); console.log(boxText.innerHTML);
                                         azl.infoboxOptions.content = boxText;
                                         m.infobox = new InfoBox(azl.infoboxOptions);
                                         google.maps.event.addListener(m.infobox, 'closeclick', function() {

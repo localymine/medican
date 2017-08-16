@@ -124,7 +124,7 @@ function azqf_form_render($name, $fields) {
         }
     }
     $output .= '<div class="submit searchsubmit"><input onclick="homesearchfrom();" class="customclasssubmit newcustomclasssubmit" type="submit" value="' . esc_attr__('Search', 'azqf') . '"></div>';
-    $output .= '<div class="submit"><input  onclick="homesearchfrom1();" class="customclasssubmit" type="button" value="' . esc_attr__('Search', 'azqf') . '"></div>';
+    $output .= '<div class="submit"><input  onclick="homesearchfrom1();"  id="homesearchfromsaf"  class="customclasssubmit" type="button" value="' . esc_attr__('Search', 'azqf') . '"></div>';
     $output .= '</div></form>';
     return $output;
 }

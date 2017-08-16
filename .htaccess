@@ -6,12 +6,24 @@ RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
-
-ErrorDocument 401 default
 </IfModule>
+
 # END WordPress
 
-#AuthType Basic
-#AuthName "Restricted Area"
-#AuthUserFile "/home/webnhathuoc/.htpasswds/public_html/passwd"
-#require valid-user
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php56” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddType application/x-httpd-ea-php56 .php .php5 .phtml
+  AddType application/font-woff .woff
+  AddType application/font-ttf .ttf
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php5_module>
+   php_flag display_errors Off
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
